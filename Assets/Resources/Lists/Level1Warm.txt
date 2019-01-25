@@ -1,0 +1,11 @@
+M
+Camisa roja
+F
+Blusa verde
+N
+Pantalón
+Camiseta amarilla
+Chanclas
+Gafas de buceo
+Cepillo de dientes
+Fin

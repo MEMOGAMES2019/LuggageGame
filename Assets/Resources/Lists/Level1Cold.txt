@@ -1,0 +1,11 @@
+M
+Camisa roja
+F
+Blusa verde
+N
+Pantalón
+Camiseta amarilla
+Botas de montaña
+Gorro
+Cepillo de dientes
+Fin
