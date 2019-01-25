@@ -10,6 +10,8 @@ public class LevelSelector : MonoBehaviour {
     public GameObject genreB;
     public GameObject levelsB;
     public GameObject listPanel;
+    public GameObject tutorialButton;
+
     Text textList;
 
     int genre;
@@ -22,6 +24,7 @@ public class LevelSelector : MonoBehaviour {
         genreB.SetActive(false);
         levelsB.SetActive(false);
         listPanel.SetActive(false);
+        tutorialButton.SetActive(true);
         textList = listPanel.GetComponentInChildren<Text>();
     }
     public void Genre(int g)
@@ -42,8 +45,12 @@ public class LevelSelector : MonoBehaviour {
     public void Level(int l)
     {
         level = l;
+        weatherB.SetActive(false);
         levelsB.SetActive(false);
         listPanel.SetActive(true);
+        genreB.SetActive(false);
+        tutorialButton.SetActive(false);
+
         switch (l)
         {
             case 1:
@@ -59,11 +66,26 @@ public class LevelSelector : MonoBehaviour {
                 if (weather == 1) loadList("Level3Warm",12);
                 else loadList("Level3Cold",12);
                 break;
+            case 4: //Tutorial
+                GM.gm.setGenre(0);
+                GM.gm.setWeather(0);
+                string[] arrayList = new string[4];
+                arrayList[0] = "Camiseta amarilla" + (char)13;
+                arrayList[1] = "Deportivas" + (char)13;
+                arrayList[2] = "Cepillo de dientes" + (char)13;
+
+                GM.gm.setList(arrayList);
+                textList.text = "Deberás identificar los siguientes objetos y guardarlos en la maleta.\nMemorízalos y haz click en el botón play cuando estés listo:\n\n-Camiseta amarilla.\n-Deportivas.\n-Cepillo de dientes";
+                break;
         }
     }
     public void Play()
     {
-        SceneManager.LoadScene("Level" + level.ToString());
+        if(level != 4)
+            SceneManager.LoadScene("Level" + level.ToString());
+        else 
+            SceneManager.LoadScene("Tutorial");
+
     }
     void loadList(string name, int numWords)
     {

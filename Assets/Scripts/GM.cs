@@ -51,9 +51,14 @@ public class GM : MonoBehaviour {
             gm.male = true;
             gm.female = false;
         }
-        else
+        else if( g == 2)
         {
             gm.male = false;
+            gm.female = true;
+        }
+        else
+        {
+            gm.male = true;
             gm.female = true;
         }
     }
@@ -64,9 +69,14 @@ public class GM : MonoBehaviour {
             gm.warm = true;
             gm.cold = false;
         }
-        else
+        else if(w == 2)
         {
             gm.warm = false;
+            gm.cold = true;
+        }
+        else
+        {
+            gm.warm = true;
             gm.cold = true;
         }
     }
