@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using RAGE.Analytics;
 
 public class LevelSelector : MonoBehaviour {
 
@@ -11,6 +12,9 @@ public class LevelSelector : MonoBehaviour {
     public GameObject levelsB;
     public GameObject listPanel;
     public GameObject tutorialButton;
+
+    // Tracker
+    public static string LevelNameGlobal = string.Empty;
 
     Text textList;
 
@@ -51,22 +55,48 @@ public class LevelSelector : MonoBehaviour {
         genreB.SetActive(false);
         tutorialButton.SetActive(false);
 
+        //reiniciar la variable
+        LevelNameGlobal = string.Empty;
+
         switch (l)
         {
             case 1:
-                if (weather == 1) loadList("Level1Warm",6);
-                else loadList("Level1Cold",6);
+                if (weather == 1)
+                {
+                    loadList("Level1Warm", 6);
+                    LevelNameGlobal = "Level1Warm";
+                }
+                else {
+                    loadList("Level1Cold", 6);
+                    LevelNameGlobal = "Level1Cold";
+                }
                 break;
             case 2:
-                if (weather == 1) loadList("Level2Warm",9);
-                else loadList("Level2Cold",9);
+                if (weather == 1) {
+                    loadList("Level2Warm", 9);
+                    LevelNameGlobal = "Level2Warm";
+                }
+                else {
+                    loadList("Level2Cold", 9);
+                    LevelNameGlobal = "Level2Cold";
+                }
               
                 break;
             case 3:
-                if (weather == 1) loadList("Level3Warm",12);
-                else loadList("Level3Cold",12);
+                if (weather == 1)
+                {
+                    loadList("Level3Warm", 12);
+                    LevelNameGlobal = "Level3Warm";
+                }
+                else
+                {
+                    loadList("Level3Cold", 12);
+                    LevelNameGlobal = "Level3Cold";
+                }
+
                 break;
             case 4: //Tutorial
+                LevelNameGlobal = "LevelTutorial";
                 GM.gm.setGenre(0);
                 GM.gm.setWeather(0);
                 string[] arrayList = new string[4];
@@ -78,6 +108,8 @@ public class LevelSelector : MonoBehaviour {
                 textList.text = "Deberás identificar los siguientes objetos y guardarlos en la maleta.\nMemorízalos y haz click en el botón play cuando estés listo:\n\n-Camiseta amarilla.\n-Deportivas.\n-Cepillo de dientes";
                 break;
         }
+
+        Tracker.T.Completable.Initialized(LevelNameGlobal, CompletableTracker.Completable.Level);
     }
     public void Play()
     {

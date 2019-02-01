@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using RAGE.Analytics;
 
 public class GM : MonoBehaviour {
 
@@ -48,16 +49,19 @@ public class GM : MonoBehaviour {
     {
         if (g == 1)
         {
+            Tracker.T.setVar("Male", 1);
             gm.male = true;
             gm.female = false;
         }
         else if( g == 2)
         {
+            Tracker.T.setVar("Female", 1);
             gm.male = false;
             gm.female = true;
         }
         else
         {
+            Tracker.T.setVar("Male & Female", 1);
             gm.male = true;
             gm.female = true;
         }
@@ -66,16 +70,19 @@ public class GM : MonoBehaviour {
     {
         if (w == 1)
         {
+            Tracker.T.setVar("Warm", 1);
             gm.warm = true;
             gm.cold = false;
         }
         else if(w == 2)
         {
+            Tracker.T.setVar("Cold", 1);
             gm.warm = false;
             gm.cold = true;
         }
         else
         {
+            Tracker.T.setVar("Warm & Cold", 1);
             gm.warm = true;
             gm.cold = true;
         }

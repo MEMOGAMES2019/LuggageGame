@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using RAGE.Analytics;
 
 public class LevelManager : MonoBehaviour {
 
@@ -44,6 +45,7 @@ public class LevelManager : MonoBehaviour {
             bathroomCam.gameObject.SetActive(false);
             firstAidKitCam.gameObject.SetActive(true);
             buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[0];
+            Tracker.T.Accessible.Accessed("FirstAidKit", AccessibleTracker.Accessible.Screen);
         }
     }
 
@@ -60,6 +62,7 @@ public class LevelManager : MonoBehaviour {
             {
                 currentDrawer = drawer;
                 currentDrawer.SetActive(true);
+                Tracker.T.Accessible.Accessed("Drawer", AccessibleTracker.Accessible.Screen);
             }
             buttonBackToRoom.SetActive(true);
             luggage.transform.position = initialLuggagePos;
@@ -79,6 +82,7 @@ public class LevelManager : MonoBehaviour {
             luggage.gameObject.SetActive(true);
             luggage.transform.position = new Vector3(0, 19f, luggage.transform.position.z);
             luggage.transform.localScale = new Vector3(3.5f, 3.5f, 1);
+            Tracker.T.Accessible.Accessed("Luggage", AccessibleTracker.Accessible.Screen);
         }
 
     }
@@ -108,6 +112,7 @@ public class LevelManager : MonoBehaviour {
             roomCam.gameObject.SetActive(false);
             bathroomCam.gameObject.SetActive(true);
             buttonBackToRoom.SetActive(false);
+            Tracker.T.Accessible.Accessed("Bathroom", AccessibleTracker.Accessible.Screen);
         }
 
     }
@@ -116,11 +121,13 @@ public class LevelManager : MonoBehaviour {
         if (currentDrawer != null) currentDrawer.SetActive(false);
         if (state == State.BATHROOM)
         {
+            Tracker.T.setVar("RoomButtom", 1);
             BackToRoom();
             buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[0];
         }
         else 
         {
+            Tracker.T.setVar("BathRoomButton", 1);
             GoToBathroom();
         }
     }
@@ -133,5 +140,9 @@ public class LevelManager : MonoBehaviour {
         buttonBathroom.SetActive(false);
         endPanel.gameObject.SetActive(true);
         endPanel.GetComponentInChildren<Text>().text = sol;
+
+        Tracker.T.setVar("EndButton", 1);
+        Tracker.T.setVar("Objetos que faltan : " + sol.Length, sol);
+        Tracker.T.Completable.Completed(LevelSelector.LevelNameGlobal, CompletableTracker.Completable.Level, true);
     }
 }

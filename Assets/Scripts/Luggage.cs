@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using RAGE.Analytics;
 
 public class Luggage : MonoBehaviour {
 
@@ -37,7 +38,8 @@ public class Luggage : MonoBehaviour {
         }
         if (i < list.Length)
         {
-            Debug.Log("Corresto");
+            Tracker.T.setVar("Objeto guardado", 1);
+            Debug.Log("Correcto");
             itemSaved[i] = true;
         }
     }
@@ -53,6 +55,8 @@ public class Luggage : MonoBehaviour {
         int i = 0;
         while (i < list.Length && list[i] != obj.name + (char)13) i++;
         if (i < list.Length) itemSaved[i] = false;
+
+        Tracker.T.setVar("Objeto quitado", 1);
     }
 
     public string Check()

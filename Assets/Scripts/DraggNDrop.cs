@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using RAGE.Analytics;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class DraggNDrop : MonoBehaviour
@@ -35,6 +36,7 @@ public class DraggNDrop : MonoBehaviour
     /// </summary>
     private void OnMouseDown()
     {
+        Tracker.T.setVar("Click en objeto", 1);
         StartPoint = transform.position;
         Offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, OFFSET_Z));
     }
@@ -44,6 +46,7 @@ public class DraggNDrop : MonoBehaviour
     /// </summary>
     private void OnMouseDrag()
     {
+        Tracker.T.setVar("Objeto pulsado", 1);
         Vector3 newPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, OFFSET_Z);
         transform.position = Camera.main.ScreenToWorldPoint(newPosition) + Offset;
         transform.position = new Vector3(transform.position.x, transform.position.y, -5);
@@ -54,7 +57,7 @@ public class DraggNDrop : MonoBehaviour
     /// </summary>
     private void OnMouseUp()
     {
-       
+        Tracker.T.setVar("Deja de clickar en objeto", 1);
         transform.position = StartPoint;
         if (itsInTarget)
         {
