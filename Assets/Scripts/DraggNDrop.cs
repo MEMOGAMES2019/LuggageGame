@@ -1,5 +1,6 @@
-﻿using UnityEngine;
-using RAGE.Analytics;
+﻿using RAGE.Analytics;
+using System;
+using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class DraggNDrop : MonoBehaviour
@@ -20,8 +21,8 @@ public class DraggNDrop : MonoBehaviour
 
     void Start()
     {
-        genre = GM.gm.getGenre();
-        weather = GM.gm.getWeather();
+        genre = GM.gm.GetGenre();
+        weather = GM.gm.GetWeather();
         if ((cold && weather == 0) || (warm && weather == 1)) gameObject.SetActive(false);
         else
         {
@@ -61,20 +62,30 @@ public class DraggNDrop : MonoBehaviour
         transform.position = StartPoint;
         if (itsInTarget)
         {
-            luggage.saveObject(twin);
-            twin.setTwin(gameObject);
+            luggage.SaveObject(twin);
+            twin.SetTwin(gameObject);
             gameObject.SetActive(false);
         }
         itsInTarget = false;
     }
-    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision == null)
+        {
+            throw new ArgumentNullException(nameof(collision));
+        }
+
         itsInTarget = true;
 
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (collision == null)
+        {
+            throw new ArgumentNullException(nameof(collision));
+        }
+
         itsInTarget = false;
     }
 

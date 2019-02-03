@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using RAGE.Analytics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using RAGE.Analytics;
 
 public class GM : MonoBehaviour {
 
@@ -34,18 +32,18 @@ public class GM : MonoBehaviour {
     {
         
     }
-    public int getGenre()
+    public int GetGenre()
     {
         if (gm.male) return 1;
         else return 2;
     }
-    public int getWeather()
+    public int GetWeather()
     {
         if (gm.warm) return 0;
         else return 1;
     }
 
-    public void setGenre(int g)
+    public void SetGenre(int g)
     {
         if (g == 1)
         {
@@ -66,7 +64,7 @@ public class GM : MonoBehaviour {
             gm.female = true;
         }
     }
-    public void setWeather(int w)
+    public void SetWeather(int w)
     {
         if (w == 1)
         {
@@ -88,7 +86,7 @@ public class GM : MonoBehaviour {
         }
     }
 
-    public void setList(string [] list_)
+    public void SetList(string [] list_)
     {
         gm.list = list_;
     }

@@ -1,8 +1,7 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class LuggageTarget : MonoBehaviour {
+public class LuggageTarget : MonoBehaviour
+{
     bool over = false;
     public LevelManager lvlMngr;
     SpriteRenderer spR;
@@ -26,7 +25,7 @@ public class LuggageTarget : MonoBehaviour {
         }
 
     }
-    public void changeSprite(Sprite sp)
+    public void ChangeSprite(Sprite sp)
     {
         spR.sprite = sp;
     }

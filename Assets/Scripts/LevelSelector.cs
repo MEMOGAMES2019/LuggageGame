@@ -1,11 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using RAGE.Analytics;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using RAGE.Analytics;
+using UnityEngine.UI;
 
-public class LevelSelector : MonoBehaviour {
+public class LevelSelector : MonoBehaviour
+{
 
     public GameObject weatherB;
     public GameObject genreB;
@@ -33,7 +32,7 @@ public class LevelSelector : MonoBehaviour {
     }
     public void Genre(int g)
     {
-        GM.gm.setGenre(g);
+        GM.gm.SetGenre(g);
         genre = g;
         genreB.SetActive(false);
         levelsB.SetActive(true);
@@ -42,10 +41,10 @@ public class LevelSelector : MonoBehaviour {
     {
         weatherB.SetActive(false);
         weather = w;
-        GM.gm.setWeather(w);
+        GM.gm.SetWeather(w);
         genreB.SetActive(true);
     }
-   
+
     public void Level(int l)
     {
         level = l;
@@ -63,48 +62,51 @@ public class LevelSelector : MonoBehaviour {
             case 1:
                 if (weather == 1)
                 {
-                    loadList("Level1Warm", 6);
+                    LoadList("Level1Warm");
                     LevelNameGlobal = "Level1Warm";
                 }
-                else {
-                    loadList("Level1Cold", 6);
+                else
+                {
+                    LoadList("Level1Cold");
                     LevelNameGlobal = "Level1Cold";
                 }
                 break;
             case 2:
-                if (weather == 1) {
-                    loadList("Level2Warm", 9);
+                if (weather == 1)
+                {
+                    LoadList("Level2Warm");
                     LevelNameGlobal = "Level2Warm";
                 }
-                else {
-                    loadList("Level2Cold", 9);
+                else
+                {
+                    LoadList("Level2Cold");
                     LevelNameGlobal = "Level2Cold";
                 }
-              
+
                 break;
             case 3:
                 if (weather == 1)
                 {
-                    loadList("Level3Warm", 12);
+                    LoadList("Level3Warm");
                     LevelNameGlobal = "Level3Warm";
                 }
                 else
                 {
-                    loadList("Level3Cold", 12);
+                    LoadList("Level3Cold");
                     LevelNameGlobal = "Level3Cold";
                 }
 
                 break;
             case 4: //Tutorial
                 LevelNameGlobal = "LevelTutorial";
-                GM.gm.setGenre(0);
-                GM.gm.setWeather(0);
+                GM.gm.SetGenre(0);
+                GM.gm.SetWeather(0);
                 string[] arrayList = new string[4];
                 arrayList[0] = "Camiseta amarilla" + (char)13;
                 arrayList[1] = "Deportivas" + (char)13;
                 arrayList[2] = "Cepillo de dientes" + (char)13;
 
-                GM.gm.setList(arrayList);
+                GM.gm.SetList(arrayList);
                 textList.text = "Deberás identificar los siguientes objetos y guardarlos en la maleta.\nMemorízalos y haz click en el botón play cuando estés listo:\n\n-Camiseta amarilla.\n-Deportivas.\n-Cepillo de dientes";
                 break;
         }
@@ -113,18 +115,18 @@ public class LevelSelector : MonoBehaviour {
     }
     public void Play()
     {
-        if(level != 4)
+        if (level != 4)
             SceneManager.LoadScene("Level" + level.ToString());
-        else 
+        else
             SceneManager.LoadScene("Tutorial");
 
     }
-    void loadList(string name, int numWords)
+    void LoadList(string name)
     {
         string finalList = "";
-        string [] arrayList = new string[12];
+        string[] arrayList = new string[12];
         TextAsset list = (TextAsset)Resources.Load("Lists/" + name, typeof(TextAsset));
-        string [] s = list.text.Split('\n');
+        string[] s = list.text.Split('\n');
         int i = 1;
         int wordsSaved = 0;
         while (s[i] != "F" + (char)13)
@@ -156,7 +158,7 @@ public class LevelSelector : MonoBehaviour {
             finalList += "- " + s[i] + "\n";
             i++;
         }
-        GM.gm.setList(arrayList);
+        GM.gm.SetList(arrayList);
         textList.text = finalList;
     }
 }

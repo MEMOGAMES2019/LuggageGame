@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(BoxCollider2D))]
-public class Item : MonoBehaviour {
+public class Item : MonoBehaviour
+{
 
     GameObject twin;
     public GameObject panelInfo;
@@ -13,14 +12,15 @@ public class Item : MonoBehaviour {
     Vector3 Offset;
     bool hasExit;
     Luggage luggage;
-    void Start () {
+    void Start()
+    {
         StartPoint = transform.localPosition;
         nameInfo = panelInfo.GetComponentInChildren<Text>();
         hasExit = false;
         luggage = transform.parent.GetComponent<Luggage>();
-	}
-	
-    public void setTwin(GameObject ob)
+    }
+
+    public void SetTwin(GameObject ob)
     {
         twin = ob;
     }
@@ -46,7 +46,7 @@ public class Item : MonoBehaviour {
             if (hasExit)
             {
                 panelInfo.SetActive(false);
-                luggage.removeObject(this);
+                luggage.RemoveObject(this);
                 twin.SetActive(true);
             }
             hasExit = false;
@@ -72,9 +72,14 @@ public class Item : MonoBehaviour {
         transform.position = Camera.main.ScreenToWorldPoint(newPosition) + Offset;
         transform.position = new Vector3(transform.position.x, transform.position.y, -5);
     }
-   
+
     private void OnTriggerExit2D(Collider2D collision)
     {
+        if (collision == null)
+        {
+            throw new System.ArgumentNullException(nameof(collision));
+        }
+
         hasExit = true;
     }
 }

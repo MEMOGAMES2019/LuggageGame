@@ -1,19 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using RAGE.Analytics;
 using UnityEngine;
 using UnityEngine.UI;
-using RAGE.Analytics;
 
-public class LevelManager : MonoBehaviour {
+public class LevelManager : MonoBehaviour
+{
 
-    enum State { BATHROOM, ROOM, DRAWER, LUGGAGE, FIRSTAIDKIT, END};
+    enum State { BATHROOM, ROOM, DRAWER, LUGGAGE, FIRSTAIDKIT, END };
 
     public Camera roomCam;
     public Camera bathroomCam;
     public Camera drawerCam;
     public Camera firstAidKitCam;
     public GameObject buttonBathroom;
-    public Sprite [] bttnBathroom;
+    public Sprite[] bttnBathroom;
     public GameObject buttonBackToRoom;
     public GameObject bttnEnd;
     public GameObject endPanel;
@@ -24,7 +23,8 @@ public class LevelManager : MonoBehaviour {
     GameObject currentDrawer = null;
     State state;
     //public Image
-	void Start () {
+    void Start()
+    {
         state = State.ROOM;
         roomCam.gameObject.SetActive(true);
         bathroomCam.gameObject.SetActive(false);
@@ -35,8 +35,8 @@ public class LevelManager : MonoBehaviour {
         initialLuggagePos = luggage.transform.position;
         initialLuggageScale = luggage.transform.localScale;
         bttnEnd.gameObject.SetActive(true);
-	}
-	
+    }
+
     public void GoToFirstAidKit()
     {
         if (state != State.END)
@@ -125,14 +125,14 @@ public class LevelManager : MonoBehaviour {
             BackToRoom();
             buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[0];
         }
-        else 
+        else
         {
             Tracker.T.setVar("BathRoomButton", 1);
             GoToBathroom();
         }
     }
 
-   public void End()
+    public void End()
     {
         state = State.END;
         string sol = luggage.Check();

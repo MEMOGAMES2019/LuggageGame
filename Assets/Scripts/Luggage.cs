@@ -1,7 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using RAGE.Analytics;
 using UnityEngine;
-using RAGE.Analytics;
 
 public class Luggage : MonoBehaviour {
 
@@ -18,17 +16,15 @@ public class Luggage : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Update () {}
 
-    public void saveObject(Item obj)
+    public void SaveObject(Item obj)
     {
         numItemsSaved++;
         obj.gameObject.SetActive(true);
         if(numItemsSaved == 1)
         {
-            foreach (LuggageTarget lgT in targets) lgT.changeSprite(fullLuggage);
+            foreach (LuggageTarget lgT in targets) lgT.ChangeSprite(fullLuggage);
         }
 
         int i = 0;
@@ -43,13 +39,13 @@ public class Luggage : MonoBehaviour {
             itemSaved[i] = true;
         }
     }
-    public void removeObject(Item obj)
+    public void RemoveObject(Item obj)
     {
         numItemsSaved--;
         obj.gameObject.SetActive(false);
         if(numItemsSaved == 0)
         {
-            foreach (LuggageTarget lgT in targets) lgT.changeSprite(emptyLuggage);
+            foreach (LuggageTarget lgT in targets) lgT.ChangeSprite(emptyLuggage);
         }
 
         int i = 0;

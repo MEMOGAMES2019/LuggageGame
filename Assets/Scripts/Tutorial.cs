@@ -1,10 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 
-public class Tutorial : MonoBehaviour {
+public class Tutorial : MonoBehaviour
+{
 
     public GameObject mano;
     public GameObject panel;
@@ -17,18 +16,19 @@ public class Tutorial : MonoBehaviour {
 
     enum State { CLICK, DRAGNDROP, LUGGAGE, OVERINFO, PULLOVER, BACKTOROOM, DRAWER, BATHROOM, BACKTHROOM, END, NULL }
     State state;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         state = State.CLICK;
         texto = panel.GetComponentInChildren<Text>();
         texto.text = "Haz click sobre la camiseta amarilla.";
         manoAnimator.SetInteger("step", 0);
-	}
+    }
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if(state == State.CLICK)
+            if (state == State.CLICK)
             {
                 state = State.DRAGNDROP;
                 texto.text = "Sin soltar, arrastra la camiseta hasta la maleta y luego suelta.";
@@ -39,7 +39,7 @@ public class Tutorial : MonoBehaviour {
                 state = State.OVERINFO;
                 texto.text = "Si pones el cursor sobre el objeto, aparecerá su nombre.";
             }
-            else if(state == State.DRAWER)
+            else if (state == State.DRAWER)
             {
                 texto.text = "No todos los cajones tendrán algo dentro.";
             }
@@ -49,7 +49,7 @@ public class Tutorial : MonoBehaviour {
                 panel.SetActive(false);
                 manoAnimator.SetInteger("step", 8);
             }
-            else if(state == State.NULL)
+            else if (state == State.NULL)
             {
                 panel.SetActive(false);
                 mano.SetActive(false);
@@ -58,7 +58,7 @@ public class Tutorial : MonoBehaviour {
         }
         if (Input.GetMouseButtonUp(0))
         {
-            if(state == State.DRAGNDROP)
+            if (state == State.DRAGNDROP)
             {
                 if (camisetaAmarilla.activeSelf)
                 {
@@ -73,7 +73,7 @@ public class Tutorial : MonoBehaviour {
                     manoAnimator.SetInteger("step", 2);
                 }
             }
-            if(state == State.PULLOVER)
+            if (state == State.PULLOVER)
             {
                 if (camisetaAmarilla.activeSelf)
                 {
@@ -84,7 +84,7 @@ public class Tutorial : MonoBehaviour {
             }
         }
 
-        if(state == State.OVERINFO)
+        if (state == State.OVERINFO)
         {
             if (panelInfoObject.activeSelf)
             {
@@ -93,7 +93,7 @@ public class Tutorial : MonoBehaviour {
                 manoAnimator.SetInteger("step", 3);
             }
         }
-        else if(state == State.END && camara.gameObject.activeSelf)
+        else if (state == State.END && camara.gameObject.activeSelf)
         {
             state = State.NULL;
             texto.text = "Haz click aquí cuando creas que has terminado.";
@@ -101,34 +101,34 @@ public class Tutorial : MonoBehaviour {
         }
     }
 
-    public void buttonBackToRoom()
+    public void ButtonBackToRoom()
     {
         if (state == State.BACKTOROOM)
         {
-             state = State.DRAWER;
-             texto.text = "Puedes ver el contenido de los cajones haciendo click en ellos.";
-             manoAnimator.SetInteger("step", 5);
-            
+            state = State.DRAWER;
+            texto.text = "Puedes ver el contenido de los cajones haciendo click en ellos.";
+            manoAnimator.SetInteger("step", 5);
+
         }
-        else if(state == State.DRAWER)
+        else if (state == State.DRAWER)
         {
             state = State.BATHROOM;
             texto.text = "Puedes hacer click aquí para ir al baño.";
             manoAnimator.SetInteger("step", 6);
         }
     }
-    public void buttonBathRoom()
+    public void ButtonBathRoom()
     {
-        if(state == State.BATHROOM)
+        if (state == State.BATHROOM)
         {
             state = State.BACKTHROOM;
             texto.text = "Revisa los cajones y haz click aquí para volver a la habitación";
             manoAnimator.SetInteger("step", 7);
 
         }
-       
+
     }
-    public void end()
+    public void End()
     {
         panel.SetActive(false);
         mano.SetActive(false);
