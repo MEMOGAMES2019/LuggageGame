@@ -1,14 +1,40 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// Script para las funcionalidades del botiquín.
+/// </summary>
 [RequireComponent(typeof(PolygonCollider2D))]
 public class Botiquin : MonoBehaviour
 {
+    #region Variables de Unity
 
-    public LevelManager lvlMngr;
-    SpriteRenderer spRenderer;
+    [SerializeField]
+    private LevelManager levelManager;
+
+    #endregion
+
+    #region Atributos
+
+    /// <summary>
+    /// Objeto que maneja el nivel.
+    /// </summary>
+    public LevelManager LevelManager { get => levelManager; set => levelManager = value; }
+
+    /// <summary>
+    /// Sprite del objeto.
+    /// </summary>
+    public SpriteRenderer SpRenderer { get ; set; }
+
+    #endregion
+
+    #region Eventos
+
+    /// <summary>
+    /// Cuando comienza el objeto
+    /// </summary>
     void Start()
     {
-        spRenderer = GetComponent<SpriteRenderer>();
+        SpRenderer = GetComponent<SpriteRenderer>();
     }
 
     /// <summary>
@@ -16,7 +42,7 @@ public class Botiquin : MonoBehaviour
     /// </summary>
     private void OnMouseEnter()
     {
-        spRenderer.enabled = true;
+        SpRenderer.enabled = true;
     }
 
     /// <summary>
@@ -24,14 +50,20 @@ public class Botiquin : MonoBehaviour
     /// </summary>
     private void OnMouseExit()
     {
-        spRenderer.enabled = false;
+        SpRenderer.enabled = false;
     }
 
+    /// <summary>
+    /// Cuando se hace click sobre el objeto.
+    /// </summary>
     private void OnMouseOver()
     {
         if (Input.GetMouseButtonUp(0))
         {
-            lvlMngr.GoToFirstAidKit();
+            LevelManager.GoToFirstAidKit();
         }
     }
+
+    #endregion
+
 }
