@@ -9,7 +9,7 @@ public class Botiquin : MonoBehaviour
     #region Variables de Unity
 
     [SerializeField]
-    private LevelManager levelManager;
+    private LevelManager _levelManager;
 
     #endregion
 
@@ -18,7 +18,7 @@ public class Botiquin : MonoBehaviour
     /// <summary>
     /// Objeto que maneja el nivel.
     /// </summary>
-    public LevelManager LevelManager { get => levelManager; set => levelManager = value; }
+    public LevelManager LevelManager { get => _levelManager; set => _levelManager = value; }
 
     /// <summary>
     /// Sprite del objeto.

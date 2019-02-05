@@ -1,101 +1,107 @@
 ﻿using RAGE.Analytics;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using static Assets.Scripts.Constantes;
 
-public class GM : MonoBehaviour {
+public class GM : MonoBehaviour
+{
+    #region Variables Unity
 
-    public static GM gm;
+    [SerializeField]
+    private int _clima;
+    [SerializeField]
+    private int _genero;
 
+    #endregion
 
-    public bool warm;
-    public bool cold;
-    public bool male;
-    public bool female;
+    #region Atributos
 
-    string[] list;
+    /// <summary>
+    /// Lista de objetos a poner en la maleta.
+    /// </summary>
+    public List<string> List { get; set; }
+
+    /// <summary>
+    /// Manejado general del juego.
+    /// </summary>
+    public static GM Gm { get; set; }
+
+    /// <summary>
+    /// Clima del juego.
+    /// </summary>
+    public Clima Clima
+    {
+        get => (Clima)_clima; set
+        {
+            switch (value)
+            {
+                case Clima.CALIDO:
+                    Tracker.T.setVar("Warm", 1);
+                    break;
+                case Clima.FRIO:
+                    Tracker.T.setVar("Cold", 1);
+                    break;
+                default:
+                    Tracker.T.setVar("Warm & Cold", 1);
+                    break;
+            }
+            _clima = (int)value;
+        }
+    }
+
+    /// <summary>
+    /// Género del juego.
+    /// </summary>
+    public Genero Genero
+    {
+        get => (Genero)_genero; set
+        {
+            switch (value)
+            {
+                case Genero.HOMBRE:
+                    Tracker.T.setVar("Male", 1);
+                    break;
+                case Genero.MUJER:
+                    Tracker.T.setVar("Female", 1);
+                    break;
+                default:
+                    Tracker.T.setVar("Male & Female", 1);
+                    break;
+            }
+            _genero = (int)value;
+        }
+    }
+
+    #endregion
+
+    #region Eventos
 
     private void Awake()
     {
-        if (gm == null)
+        if (Gm == null)
         {
-            gm = this;
+            Gm = this;
             DontDestroyOnLoad(gameObject);
         }
-        else if (gm != this)
+        else if (Gm != this)
         {
             Destroy(gameObject);
         }
-        list = new string[12];
+        List = new List<string>();
     }
 
-    private void Start()
-    {
-        
-    }
-    public int GetGenre()
-    {
-        if (gm.male) return 1;
-        else return 2;
-    }
-    public int GetWeather()
-    {
-        if (gm.warm) return 0;
-        else return 1;
-    }
+    private void Start() { }
 
-    public void SetGenre(int g)
-    {
-        if (g == 1)
-        {
-            Tracker.T.setVar("Male", 1);
-            gm.male = true;
-            gm.female = false;
-        }
-        else if( g == 2)
-        {
-            Tracker.T.setVar("Female", 1);
-            gm.male = false;
-            gm.female = true;
-        }
-        else
-        {
-            Tracker.T.setVar("Male & Female", 1);
-            gm.male = true;
-            gm.female = true;
-        }
-    }
-    public void SetWeather(int w)
-    {
-        if (w == 1)
-        {
-            Tracker.T.setVar("Warm", 1);
-            gm.warm = true;
-            gm.cold = false;
-        }
-        else if(w == 2)
-        {
-            Tracker.T.setVar("Cold", 1);
-            gm.warm = false;
-            gm.cold = true;
-        }
-        else
-        {
-            Tracker.T.setVar("Warm & Cold", 1);
-            gm.warm = true;
-            gm.cold = true;
-        }
-    }
+    #endregion
 
-    public void SetList(string [] list_)
-    {
-        gm.list = list_;
-    }
-    public string[] List
-    {
-        get { return gm.list; }
-    }
+    #region Métodos públicos
+
     public void LoadScene(string scene)
     {
         SceneManager.LoadScene(scene);
     }
+
+    #endregion
+
 }

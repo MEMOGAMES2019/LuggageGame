@@ -1,7 +1,10 @@
 ﻿using RAGE.Analytics;
+using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using static Assets.Scripts.Constantes;
 
 public class LevelSelector : MonoBehaviour
 {
@@ -32,7 +35,7 @@ public class LevelSelector : MonoBehaviour
     }
     public void Genre(int g)
     {
-        GM.gm.SetGenre(g);
+        GM.Gm.Genero=(Genero)g;
         genre = g;
         genreB.SetActive(false);
         levelsB.SetActive(true);
@@ -41,7 +44,7 @@ public class LevelSelector : MonoBehaviour
     {
         weatherB.SetActive(false);
         weather = w;
-        GM.gm.SetWeather(w);
+        GM.Gm.Clima = (Clima)w;
         genreB.SetActive(true);
     }
 
@@ -99,14 +102,16 @@ public class LevelSelector : MonoBehaviour
                 break;
             case 4: //Tutorial
                 LevelNameGlobal = "LevelTutorial";
-                GM.gm.SetGenre(0);
-                GM.gm.SetWeather(0);
-                string[] arrayList = new string[4];
-                arrayList[0] = "Camiseta amarilla" + (char)13;
-                arrayList[1] = "Deportivas" + (char)13;
-                arrayList[2] = "Cepillo de dientes" + (char)13;
+                GM.Gm.Genero = Genero.NEUTRAL;
+                GM.Gm.Clima = Clima.AMBOS;
+                List<string> arrayList = new List<string>
+                {
+                    "Camiseta amarilla" + (char)13,
+                    "Deportivas" + (char)13,
+                    "Cepillo de dientes" + (char)13
+                };
 
-                GM.gm.SetList(arrayList);
+                GM.Gm.List = arrayList;
                 textList.text = "Deberás identificar los siguientes objetos y guardarlos en la maleta.\nMemorízalos y haz click en el botón play cuando estés listo:\n\n-Camiseta amarilla.\n-Deportivas.\n-Cepillo de dientes";
                 break;
         }
@@ -123,19 +128,17 @@ public class LevelSelector : MonoBehaviour
     }
     void LoadList(string name)
     {
-        string finalList = "";
-        string[] arrayList = new string[12];
+        StringBuilder finalList = new StringBuilder();
+        List<string> arrayList = new List<string>();
         TextAsset list = (TextAsset)Resources.Load("Lists/" + name, typeof(TextAsset));
-        string[] s = list.text.Split('\n');
+        List<string> s = new List<string>(list.text.Split('\n'));
         int i = 1;
-        int wordsSaved = 0;
         while (s[i] != "F" + (char)13)
         {
             if (genre == 1)
             {
-                arrayList[wordsSaved] = s[i];
-                wordsSaved++;
-                finalList += "- " + s[i] + "\n";
+                arrayList.Add(s[i]);
+                finalList.Append("- " + s[i] + "\n");
             }
             i++;
         }
@@ -144,21 +147,19 @@ public class LevelSelector : MonoBehaviour
         {
             if (genre == 2)
             {
-                arrayList[wordsSaved] = s[i];
-                wordsSaved++;
-                finalList += "- " + s[i] + "\n";
+                arrayList.Add(s[i]);
+                finalList.Append("- " + s[i] + "\n");
             }
             i++;
         }
         i++;
         while (s[i] != "Fin")
         {
-            arrayList[wordsSaved] = s[i];
-            wordsSaved++;
-            finalList += "- " + s[i] + "\n";
+            arrayList.Add(s[i]);
+            finalList.Append("- " + s[i] + "\n");
             i++;
         }
-        GM.gm.SetList(arrayList);
-        textList.text = finalList;
+        GM.Gm.List = arrayList;
+        textList.text = finalList.ToString();
     }
 }

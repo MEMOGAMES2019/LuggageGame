@@ -520,11 +520,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 1166578806}
-  warm: 1
-  cold: 0
-  female: 0
-  male: 1
+  _objetoMaleta: {fileID: 1166578806}
+  _clima: 1
+  _genero: 1
 --- !u!61 &51878402
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1058,7 +1056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea0cc301f91817c46b297102df610cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelManager: {fileID: 587537668}
+  _levelManager: {fileID: 587537668}
 --- !u!1 &281620837
 GameObject:
   m_ObjectHideFlags: 0
@@ -1228,11 +1226,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 1220075542}
-  warm: 0
-  cold: 1
-  female: 0
-  male: 0
+  _objetoMaleta: {fileID: 1220075542}
+  _clima: 2
+  _genero: 0
 --- !u!61 &283083661
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1352,11 +1348,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 1736226605}
-  warm: 0
-  cold: 1
-  female: 0
-  male: 0
+  _objetoMaleta: {fileID: 1736226605}
+  _clima: 2
+  _genero: 0
 --- !u!61 &303610640
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1722,7 +1716,7 @@ GameObject:
   - component: {fileID: 341285702}
   - component: {fileID: 341285701}
   m_Layer: 8
-  m_Name: ' LuggageTarget'
+  m_Name: LuggageTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2360,11 +2354,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 1676733381}
-  warm: 0
-  cold: 0
-  female: 0
-  male: 0
+  _objetoMaleta: {fileID: 1676733381}
+  _clima: 0
+  _genero: 0
 --- !u!61 &452117230
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2747,11 +2739,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 699413757}
-  warm: 0
-  cold: 1
-  female: 0
-  male: 0
+  _objetoMaleta: {fileID: 699413757}
+  _clima: 2
+  _genero: 0
 --- !u!61 &498028783
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3213,11 +3203,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 866571900}
-  warm: 0
-  cold: 0
-  female: 1
-  male: 0
+  _objetoMaleta: {fileID: 866571900}
+  _clima: 0
+  _genero: 2
 --- !u!61 &585288816
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3351,11 +3339,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 421889229}
-  warm: 0
-  cold: 1
-  female: 0
-  male: 0
+  _objetoMaleta: {fileID: 421889229}
+  _clima: 2
+  _genero: 0
 --- !u!61 &586599236
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3531,11 +3517,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 1224540176}
-  warm: 1
-  cold: 0
-  female: 0
-  male: 0
+  _objetoMaleta: {fileID: 1224540176}
+  _clima: 1
+  _genero: 0
 --- !u!61 &592053478
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3928,11 +3912,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 25033140}
-  warm: 0
-  cold: 1
-  female: 0
-  male: 0
+  _objetoMaleta: {fileID: 25033140}
+  _clima: 2
+  _genero: 0
 --- !u!61 &670937417
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4491,11 +4473,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 358684181}
-  warm: 1
-  cold: 0
-  female: 0
-  male: 1
+  _objetoMaleta: {fileID: 358684181}
+  _clima: 1
+  _genero: 1
 --- !u!61 &812569522
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5360,11 +5340,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 1416617550}
-  warm: 0
-  cold: 0
-  female: 0
-  male: 0
+  _objetoMaleta: {fileID: 1416617550}
+  _clima: 0
+  _genero: 0
 --- !u!61 &945056542
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5953,7 +5931,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 0}
+  panelInfo: {fileID: 306155284}
 --- !u!61 &1046779804
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6317,11 +6295,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 361220854}
-  warm: 1
-  cold: 0
-  female: 0
-  male: 0
+  _objetoMaleta: {fileID: 361220854}
+  _clima: 1
+  _genero: 0
 --- !u!61 &1138649975
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7225,11 +7201,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 1914596225}
-  warm: 0
-  cold: 1
-  female: 0
-  male: 0
+  _objetoMaleta: {fileID: 1914596225}
+  _clima: 2
+  _genero: 0
 --- !u!61 &1402499371
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7469,11 +7443,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 1653535232}
-  warm: 0
-  cold: 1
-  female: 0
-  male: 1
+  _objetoMaleta: {fileID: 1653535232}
+  _clima: 2
+  _genero: 1
 --- !u!61 &1509433761
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7593,11 +7565,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 969835337}
-  warm: 0
-  cold: 0
-  female: 0
-  male: 0
+  _objetoMaleta: {fileID: 969835337}
+  _clima: 0
+  _genero: 0
 --- !u!61 &1592771625
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8005,7 +7975,7 @@ GameObject:
   - component: {fileID: 1729250181}
   - component: {fileID: 1729250180}
   m_Layer: 8
-  m_Name: " LuggageTargetBa\xF1o"
+  m_Name: "LuggageTargetBa\xF1o"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8576,11 +8546,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 881011583}
-  warm: 1
-  cold: 0
-  female: 0
-  male: 0
+  _objetoMaleta: {fileID: 881011583}
+  _clima: 1
+  _genero: 0
 --- !u!61 &1896814429
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8820,11 +8788,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 780614047}
-  warm: 1
-  cold: 0
-  female: 0
-  male: 0
+  _objetoMaleta: {fileID: 780614047}
+  _clima: 1
+  _genero: 0
 --- !u!61 &1905493098
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8958,11 +8924,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 1085311762}
-  warm: 1
-  cold: 0
-  female: 1
-  male: 0
+  _objetoMaleta: {fileID: 1085311762}
+  _clima: 1
+  _genero: 2
 --- !u!61 &1911628333
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9397,11 +9361,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 1896928909}
-  warm: 1
-  cold: 0
-  female: 0
-  male: 0
+  _objetoMaleta: {fileID: 1896928909}
+  _clima: 1
+  _genero: 0
 --- !u!61 &2005453505
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9725,11 +9687,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 1046779803}
-  warm: 0
-  cold: 0
-  female: 0
-  male: 0
+  _objetoMaleta: {fileID: 1046779803}
+  _clima: 0
+  _genero: 0
 --- !u!61 &2093877161
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9818,7 +9778,7 @@ GameObject:
   - component: {fileID: 2095170673}
   - component: {fileID: 2095170672}
   m_Layer: 8
-  m_Name: ' LuggageBotiquin'
+  m_Name: LuggageBotiquin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10017,11 +9977,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  twin: {fileID: 687840384}
-  warm: 0
-  cold: 0
-  female: 0
-  male: 0
+  _objetoMaleta: {fileID: 687840384}
+  _clima: 0
+  _genero: 0
 --- !u!61 &2143725661
 BoxCollider2D:
   m_ObjectHideFlags: 0
