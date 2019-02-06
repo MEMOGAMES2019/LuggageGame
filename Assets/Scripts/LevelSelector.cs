@@ -1,4 +1,5 @@
 ﻿using RAGE.Analytics;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
@@ -25,13 +26,44 @@ public class LevelSelector : MonoBehaviour
 
     #region Atributos
 
+    /// <summary>
+    /// Botones para elegir clima.
+    /// </summary>
     public GameObject ClimaButtons { get => _climaButtons; set => _climaButtons = value; }
+
+    /// <summary>
+    /// Botones para elegir género.
+    /// </summary>
     public GameObject GeneroButtons { get => _generoButtons; set => _generoButtons = value; }
+
+    /// <summary>
+    /// Botones para elegir nivel de dificultad.
+    /// </summary>
     public GameObject NivelButtons { get => _nivelButtons; set => _nivelButtons = value; }
+
+    /// <summary>
+    /// Panel donde se encuentra la lista de objetos a recoger.
+    /// </summary>
     public GameObject PanelList { get => _panelList; set => _panelList = value; }
+
+    /// <summary>
+    /// Botones para dar comienzo al tutorial.
+    /// </summary>
     public GameObject TutorialButton { get => _tutorialButton; set => _tutorialButton = value; }
+
+    /// <summary>
+    /// Nombre completo del nivel.
+    /// </summary>
     public static string LevelNameGlobal { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Lista de objetos a recoger.
+    /// </summary>
     public Text TextList { get; set; }
+
+    /// <summary>
+    /// Nivel establecido por el jugador.
+    /// </summary>
     public int Level { get; set; }
 
     #endregion
@@ -52,12 +84,21 @@ public class LevelSelector : MonoBehaviour
 
     #region Métodos públicos
 
+    /// <summary>
+    /// Establece el género en el que se cargarán los datos.
+    /// </summary>
+    /// <param name="g">Valor númerico del género: 0 -> NEUTRAL, 1 -> HOMBRE, 2 -> MUJER</param>
     public void SetGenre(int g)
     {
         GM.Gm.Genero = (Genero)g;
         GeneroButtons.SetActive(false);
         NivelButtons.SetActive(true);
     }
+
+    /// <summary>
+    /// Establece el clima en el que se cargarán los datos.
+    /// </summary>
+    /// <param name="w">Valor númerico del clima: 0 -> AMBOS, 1 -> CÁLIDO, 2 -> FRÍO</param>
     public void SetWeather(int w)
     {
         GM.Gm.Clima = (Clima)w;
@@ -65,6 +106,10 @@ public class LevelSelector : MonoBehaviour
         GeneroButtons.SetActive(true);
     }
 
+    /// <summary>
+    /// Establece el nivel de dificultad en el que se cargaran los datos del fichero.
+    /// </summary>
+    /// <param name="l">Nivel de dificultad del juego: 0 -> Tutorial</param>
     public void SetLevel(int l)
     {
         Level = l;
@@ -81,18 +126,15 @@ public class LevelSelector : MonoBehaviour
             switch (l)
             {
                 case 1:
-                    //LoadList("Level1Warm");
                     LevelNameGlobal = "Level1";
                     break;
                 case 2:
-                    //LoadList("Level2Cold");
                     LevelNameGlobal = "Level2";
                     break;
                 case 3:
                     LevelNameGlobal = "Level3";
                     break;
             }
-
 
             switch (GM.Gm.Clima)
             {
@@ -112,16 +154,26 @@ public class LevelSelector : MonoBehaviour
             GM.Gm.Clima = Clima.AMBOS;
             GM.Gm.List = new List<string>
             {
-                "Camiseta amarilla" + (char)13,
-                "Deportivas" + (char)13,
-                "Cepillo de dientes" + (char)13
+                "Camiseta amarilla",
+                "Deportivas",
+                "Cepillo de dientes"
             };
-
-            TextList.text = "Deberás identificar los siguientes objetos y guardarlos en la maleta.\nMemorízalos y haz click en el botón play cuando estés listo:\n\n-Camiseta amarilla.\n-Deportivas.\n-Cepillo de dientes";
+            StringBuilder cad = new StringBuilder();
+            cad.AppendLine("Deberás identificar los siguientes objetos y guardarlos en la maleta.");
+            cad.AppendLine("Memorízalos y haz click en el botón play cuando estés listo");
+            cad.AppendLine();
+            cad.AppendLine("- Camiseta amarilla");
+            cad.AppendLine("- Deportivas");
+            cad.AppendLine("- Cepillo de dientes");
+            TextList.text = cad.ToString();
         }
 
         Tracker.T.Completable.Initialized(LevelNameGlobal, CompletableTracker.Completable.Level);
     }
+
+    /// <summary>
+    /// Comienza el juego según los parámetros establecidos.
+    /// </summary>
     public void Play()
     {
         string levelPlay = (Level != 0) ? "Level" + Level.ToString() : "Tutorial";
@@ -132,41 +184,45 @@ public class LevelSelector : MonoBehaviour
 
     #region Métodos privados
 
+    /// <summary>
+    /// Carga la lista de objetos a poner en la maleta.
+    /// </summary>
+    /// <param name="name">Nombre del fichero donde se van a carar los datos.</param>
     private void LoadList(string name)
     {
+        TextList.text = string.Empty;
+        GM.Gm.List = new List<string>();
+
+        TextAsset list = (TextAsset)Resources.Load(string.Concat("Lists/", name), typeof(TextAsset));
+        Queue<string> cola = new Queue<string>(list.text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries));
+        string objeto = cola.Dequeue();
+
+        GetPrendas(cola, Genero.HOMBRE, "F");
+        GetPrendas(cola, Genero.MUJER, "N");
+        GetPrendas(cola, Genero.NEUTRAL, "Fin");
+    }
+
+    /// <summary>
+    /// Recoge del fichero las prendas según los parámetros.
+    /// </summary>
+    /// <param name="cola">Cola con la lista de objetos a procesar.</param>
+    /// <param name="genero">Genero de la prenda a recoger.</param>
+    /// <param name="fin">Hasta donde leemos del fichero.</param>
+    private void GetPrendas(Queue<string> cola, Genero genero, string fin)
+    {
         StringBuilder finalList = new StringBuilder();
-        List<string> arrayList = new List<string>();
-        TextAsset list = (TextAsset)Resources.Load("Lists/" + name, typeof(TextAsset));
-        List<string> s = new List<string>(list.text.Split('\n'));
-        int i = 1;
-        while (s[i] != "F" + (char)13)
+        string objeto = cola.Dequeue();
+        while (!objeto.Equals(fin))
         {
-            if (GM.Gm.Genero == Genero.HOMBRE)
+            if (GM.Gm.Genero == genero || genero == Genero.NEUTRAL)
             {
-                arrayList.Add(s[i]);
-                finalList.Append("- " + s[i] + "\n");
+                GM.Gm.List.Add(objeto);
+                finalList.AppendLine(string.Concat("- ", objeto));
             }
-            i++;
+            objeto = cola.Dequeue();
         }
-        i++;
-        while (s[i] != "N" + (char)13)
-        {
-            if (GM.Gm.Genero == Genero.MUJER)
-            {
-                arrayList.Add(s[i]);
-                finalList.Append("- " + s[i] + "\n");
-            }
-            i++;
-        }
-        i++;
-        while (s[i] != "Fin")
-        {
-            arrayList.Add(s[i]);
-            finalList.Append("- " + s[i] + "\n");
-            i++;
-        }
-        GM.Gm.List = arrayList;
-        TextList.text = finalList.ToString();
+
+        TextList.text = string.Concat(TextList.text, finalList.ToString());
     }
 
     #endregion
