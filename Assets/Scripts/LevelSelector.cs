@@ -21,6 +21,8 @@ public class LevelSelector : MonoBehaviour
     private GameObject _panelList;
     [SerializeField]
     private GameObject _tutorialButton;
+    [SerializeField]
+    private Text _pregunta;
 
     #endregion
 
@@ -45,6 +47,11 @@ public class LevelSelector : MonoBehaviour
     /// Panel donde se encuentra la lista de objetos a recoger.
     /// </summary>
     public GameObject PanelList { get => _panelList; set => _panelList = value; }
+
+    /// <summary>
+    /// Pregunta que se le hace al jugador.
+    /// </summary>
+    public Text PreguntaText { get => _pregunta; set => _pregunta = value; }
 
     /// <summary>
     /// Botones para dar comienzo al tutorial.
@@ -78,6 +85,7 @@ public class LevelSelector : MonoBehaviour
         ClimaButtons.SetActive(true);
         TutorialButton.SetActive(true);
         TextList = PanelList.GetComponentInChildren<Text>();
+        PreguntaText.text = "¿En qué clima quieres jugar?";
     }
 
     #endregion
@@ -93,6 +101,7 @@ public class LevelSelector : MonoBehaviour
         GM.Gm.Genero = (Genero)g;
         GeneroButtons.SetActive(false);
         NivelButtons.SetActive(true);
+        PreguntaText.text = "¿En qué nivel de dificultad quieres jugar?";
     }
 
     /// <summary>
@@ -104,6 +113,7 @@ public class LevelSelector : MonoBehaviour
         GM.Gm.Clima = (Clima)w;
         ClimaButtons.SetActive(false);
         GeneroButtons.SetActive(true);
+        PreguntaText.text = "¿Con qué género quieres jugar?";
     }
 
     /// <summary>
@@ -118,6 +128,7 @@ public class LevelSelector : MonoBehaviour
         GeneroButtons.SetActive(false);
         TutorialButton.SetActive(false);
         PanelList.SetActive(true);
+        PreguntaText.text = string.Empty;
 
         //reiniciar la variable
         LevelNameGlobal = string.Empty;

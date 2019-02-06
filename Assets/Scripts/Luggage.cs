@@ -30,18 +30,18 @@ public class Luggage : MonoBehaviour
             foreach (LuggageTarget lgT in targets) lgT.ChangeSprite(fullLuggage);
         }
 
-        int i = 0;
-        while (i < list.Count && list[i].ToUpper() != obj.name.ToUpper())
+        for (int i = 0; i < list.Count; ++i)
         {
-            i++;
-        }
-        if (i < list.Count)
-        {
-            Tracker.T.setVar("Objeto guardado", 1);
-            Debug.Log("Correcto");
-            itemSaved[i] = true;
+            if(list[i].ToUpper() != obj.name.ToUpper())
+            {
+                Tracker.T.setVar("Objeto guardado", 1);
+                Debug.Log("Correcto");
+                itemSaved[i] = true;
+                break;
+            }
         }
     }
+
     public void RemoveObject(Item obj)
     {
         numItemsSaved--;
