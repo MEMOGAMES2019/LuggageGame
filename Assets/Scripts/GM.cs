@@ -91,7 +91,10 @@ public class GM : MonoBehaviour
         List = new List<string>();
     }
 
-    private void Start() { }
+    private void Start()
+    {
+        Screen.orientation = ScreenOrientation.LandscapeLeft;
+    }
 
     #endregion
 

@@ -8,125 +8,131 @@ using static Assets.Scripts.Constantes;
 
 public class LevelSelector : MonoBehaviour
 {
+    #region Variables de Unity
 
-    public GameObject weatherB;
-    public GameObject genreB;
-    public GameObject levelsB;
-    public GameObject listPanel;
-    public GameObject tutorialButton;
+    [SerializeField]
+    private GameObject _climaButtons;
+    [SerializeField]
+    private GameObject _generoButtons;
+    [SerializeField]
+    private GameObject _nivelButtons;
+    [SerializeField]
+    private GameObject _panelList;
+    [SerializeField]
+    private GameObject _tutorialButton;
 
-    // Tracker
-    public static string LevelNameGlobal = string.Empty;
+    #endregion
 
-    Text textList;
+    #region Atributos
 
-    int genre;
-    int weather;
-    int level;
+    public GameObject ClimaButtons { get => _climaButtons; set => _climaButtons = value; }
+    public GameObject GeneroButtons { get => _generoButtons; set => _generoButtons = value; }
+    public GameObject NivelButtons { get => _nivelButtons; set => _nivelButtons = value; }
+    public GameObject PanelList { get => _panelList; set => _panelList = value; }
+    public GameObject TutorialButton { get => _tutorialButton; set => _tutorialButton = value; }
+    public static string LevelNameGlobal { get; set; } = string.Empty;
+    public Text TextList { get; set; }
+    public int Level { get; set; }
+
+    #endregion
+
+    #region Eventos
 
     private void Start()
     {
-        weatherB.SetActive(true);
-        genreB.SetActive(false);
-        levelsB.SetActive(false);
-        listPanel.SetActive(false);
-        tutorialButton.SetActive(true);
-        textList = listPanel.GetComponentInChildren<Text>();
-    }
-    public void Genre(int g)
-    {
-        GM.Gm.Genero=(Genero)g;
-        genre = g;
-        genreB.SetActive(false);
-        levelsB.SetActive(true);
-    }
-    public void Weather(int w)
-    {
-        weatherB.SetActive(false);
-        weather = w;
-        GM.Gm.Clima = (Clima)w;
-        genreB.SetActive(true);
+        GeneroButtons.SetActive(false);
+        NivelButtons.SetActive(false);
+        PanelList.SetActive(false);
+        ClimaButtons.SetActive(true);
+        TutorialButton.SetActive(true);
+        TextList = PanelList.GetComponentInChildren<Text>();
     }
 
-    public void Level(int l)
+    #endregion
+
+    #region Métodos públicos
+
+    public void SetGenre(int g)
     {
-        level = l;
-        weatherB.SetActive(false);
-        levelsB.SetActive(false);
-        listPanel.SetActive(true);
-        genreB.SetActive(false);
-        tutorialButton.SetActive(false);
+        GM.Gm.Genero = (Genero)g;
+        GeneroButtons.SetActive(false);
+        NivelButtons.SetActive(true);
+    }
+    public void SetWeather(int w)
+    {
+        GM.Gm.Clima = (Clima)w;
+        ClimaButtons.SetActive(false);
+        GeneroButtons.SetActive(true);
+    }
+
+    public void SetLevel(int l)
+    {
+        Level = l;
+        ClimaButtons.SetActive(false);
+        NivelButtons.SetActive(false);
+        GeneroButtons.SetActive(false);
+        TutorialButton.SetActive(false);
+        PanelList.SetActive(true);
 
         //reiniciar la variable
         LevelNameGlobal = string.Empty;
-
-        switch (l)
+        if (l != 0)
         {
-            case 1:
-                if (weather == 1)
-                {
-                    LoadList("Level1Warm");
-                    LevelNameGlobal = "Level1Warm";
-                }
-                else
-                {
-                    LoadList("Level1Cold");
-                    LevelNameGlobal = "Level1Cold";
-                }
-                break;
-            case 2:
-                if (weather == 1)
-                {
-                    LoadList("Level2Warm");
-                    LevelNameGlobal = "Level2Warm";
-                }
-                else
-                {
-                    LoadList("Level2Cold");
-                    LevelNameGlobal = "Level2Cold";
-                }
+            switch (l)
+            {
+                case 1:
+                    //LoadList("Level1Warm");
+                    LevelNameGlobal = "Level1";
+                    break;
+                case 2:
+                    //LoadList("Level2Cold");
+                    LevelNameGlobal = "Level2";
+                    break;
+                case 3:
+                    LevelNameGlobal = "Level3";
+                    break;
+            }
 
-                break;
-            case 3:
-                if (weather == 1)
-                {
-                    LoadList("Level3Warm");
-                    LevelNameGlobal = "Level3Warm";
-                }
-                else
-                {
-                    LoadList("Level3Cold");
-                    LevelNameGlobal = "Level3Cold";
-                }
 
-                break;
-            case 4: //Tutorial
-                LevelNameGlobal = "LevelTutorial";
-                GM.Gm.Genero = Genero.NEUTRAL;
-                GM.Gm.Clima = Clima.AMBOS;
-                List<string> arrayList = new List<string>
-                {
-                    "Camiseta amarilla" + (char)13,
-                    "Deportivas" + (char)13,
-                    "Cepillo de dientes" + (char)13
-                };
+            switch (GM.Gm.Clima)
+            {
+                case Clima.CALIDO:
+                    LevelNameGlobal = string.Concat(LevelNameGlobal, "Warm");
+                    break;
+                case Clima.FRIO:
+                    LevelNameGlobal = string.Concat(LevelNameGlobal, "Cold");
+                    break;
+            }
+            LoadList(LevelNameGlobal);
+        }
+        else
+        {
+            LevelNameGlobal = "LevelTutorial";
+            GM.Gm.Genero = Genero.NEUTRAL;
+            GM.Gm.Clima = Clima.AMBOS;
+            GM.Gm.List = new List<string>
+            {
+                "Camiseta amarilla" + (char)13,
+                "Deportivas" + (char)13,
+                "Cepillo de dientes" + (char)13
+            };
 
-                GM.Gm.List = arrayList;
-                textList.text = "Deberás identificar los siguientes objetos y guardarlos en la maleta.\nMemorízalos y haz click en el botón play cuando estés listo:\n\n-Camiseta amarilla.\n-Deportivas.\n-Cepillo de dientes";
-                break;
+            TextList.text = "Deberás identificar los siguientes objetos y guardarlos en la maleta.\nMemorízalos y haz click en el botón play cuando estés listo:\n\n-Camiseta amarilla.\n-Deportivas.\n-Cepillo de dientes";
         }
 
         Tracker.T.Completable.Initialized(LevelNameGlobal, CompletableTracker.Completable.Level);
     }
     public void Play()
     {
-        if (level != 4)
-            SceneManager.LoadScene("Level" + level.ToString());
-        else
-            SceneManager.LoadScene("Tutorial");
-
+        string levelPlay = (Level != 0) ? "Level" + Level.ToString() : "Tutorial";
+        SceneManager.LoadScene(levelPlay);
     }
-    void LoadList(string name)
+
+    #endregion
+
+    #region Métodos privados
+
+    private void LoadList(string name)
     {
         StringBuilder finalList = new StringBuilder();
         List<string> arrayList = new List<string>();
@@ -135,7 +141,7 @@ public class LevelSelector : MonoBehaviour
         int i = 1;
         while (s[i] != "F" + (char)13)
         {
-            if (genre == 1)
+            if (GM.Gm.Genero == Genero.HOMBRE)
             {
                 arrayList.Add(s[i]);
                 finalList.Append("- " + s[i] + "\n");
@@ -145,7 +151,7 @@ public class LevelSelector : MonoBehaviour
         i++;
         while (s[i] != "N" + (char)13)
         {
-            if (genre == 2)
+            if (GM.Gm.Genero == Genero.MUJER)
             {
                 arrayList.Add(s[i]);
                 finalList.Append("- " + s[i] + "\n");
@@ -160,6 +166,9 @@ public class LevelSelector : MonoBehaviour
             i++;
         }
         GM.Gm.List = arrayList;
-        textList.text = finalList.ToString();
+        TextList.text = finalList.ToString();
     }
+
+    #endregion
+
 }

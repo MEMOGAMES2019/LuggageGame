@@ -1748,7 +1748,6 @@ namespace AssetPackage
             /// </returns>
             public string ToXml()
             {
-#warning Use XMLSerializer else use proper XML Encoding.
                 return "<TrackEvent \"timestamp\"=\"" + this.TimeStamp.ToString(TimeFormat) + "\"" +
                        " \"event\"=\"" + verbIds[this.Event.ToString().ToLower()] + "\"" +
                        " \"target\"=\"" + this.Target + "\"" +

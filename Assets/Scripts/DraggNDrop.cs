@@ -1,5 +1,4 @@
-﻿using Assets.Scripts;
-using RAGE.Analytics;
+﻿using RAGE.Analytics;
 using System;
 using UnityEngine;
 using static Assets.Scripts.Constantes;
