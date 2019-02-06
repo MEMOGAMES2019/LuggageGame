@@ -2971,7 +2971,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f126af5b1625d0a4c8225a2fb8c3bb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets:
+  _targets:
   - {fileID: 341285701}
   - {fileID: 1729250180}
   - {fileID: 2095170672}
