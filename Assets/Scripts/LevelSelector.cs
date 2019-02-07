@@ -177,6 +177,7 @@ public class LevelSelector : MonoBehaviour
             cad.AppendLine("- Deportivas");
             cad.AppendLine("- Cepillo de dientes");
             TextList.text = cad.ToString();
+            TextList.alignment = TextAnchor.MiddleLeft;
         }
 
         Tracker.T.Completable.Initialized(LevelNameGlobal, CompletableTracker.Completable.Level);
@@ -201,12 +202,12 @@ public class LevelSelector : MonoBehaviour
     /// <param name="name">Nombre del fichero donde se van a carar los datos.</param>
     private void LoadList(string name)
     {
-        TextList.text = string.Empty;
+        TextList.text = string.Concat("Tienes que meter estos objetos en la maleta:", Environment.CommandLine);
         GM.Gm.List = new List<string>();
 
         TextAsset list = (TextAsset)Resources.Load(string.Concat("Lists/", name), typeof(TextAsset));
         Queue<string> cola = new Queue<string>(list.text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries));
-        string objeto = cola.Dequeue();
+        cola.Dequeue();
 
         GetPrendas(cola, Genero.HOMBRE, "F");
         GetPrendas(cola, Genero.MUJER, "N");
