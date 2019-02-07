@@ -202,7 +202,7 @@ public class LevelSelector : MonoBehaviour
     /// <param name="name">Nombre del fichero donde se van a carar los datos.</param>
     private void LoadList(string name)
     {
-        TextList.text = string.Concat("Tienes que meter estos objetos en la maleta:", Environment.CommandLine);
+        TextList.text = string.Concat("Tienes que meter estos objetos en la maleta:", Environment.NewLine);
         GM.Gm.List = new List<string>();
 
         TextAsset list = (TextAsset)Resources.Load(string.Concat("Lists/", name), typeof(TextAsset));
