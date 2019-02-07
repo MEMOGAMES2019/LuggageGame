@@ -1217,7 +1217,7 @@ GameObject:
   - component: {fileID: 203013111}
   - component: {fileID: 203013110}
   m_Layer: 8
-  m_Name: ' LuggageBotiquin'
+  m_Name: LuggageBotiquin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10319,7 +10319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f126af5b1625d0a4c8225a2fb8c3bb58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targets:
+  _targets:
   - {fileID: 1288569440}
   - {fileID: 1859704354}
   - {fileID: 203013110}
