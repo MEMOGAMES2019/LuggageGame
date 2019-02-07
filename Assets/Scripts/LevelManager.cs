@@ -93,7 +93,7 @@ public class LevelManager : MonoBehaviour
         {
             state = State.ROOM;
             roomCam.gameObject.SetActive(true);
-            bathroomCam.gameObject.SetActive(false);
+            bathroomCam.gameObject.SetActive(false);         
             drawerCam.gameObject.SetActive(false);
             if (currentDrawer != null) currentDrawer.SetActive(false);
             buttonBackToRoom.SetActive(false);
