@@ -1,4 +1,5 @@
 ﻿using RAGE.Analytics;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -98,13 +99,13 @@ public class LevelManager : MonoBehaviour
             {
                 state = State.ROOM;
                 roomCam.gameObject.SetActive(true);
-                bathroomCam.gameObject.SetActive(false);              
+                bathroomCam.gameObject.SetActive(false);
             }
             else if (myActualRoom == 1)
             {
                 state = State.BATHROOM;
                 roomCam.gameObject.SetActive(false);
-                bathroomCam.gameObject.SetActive(true);        
+                bathroomCam.gameObject.SetActive(true);
             }
             drawerCam.gameObject.SetActive(false);
             if (currentDrawer != null) currentDrawer.SetActive(false);
@@ -149,14 +150,20 @@ public class LevelManager : MonoBehaviour
     public void End()
     {
         state = State.END;
-        string sol = luggage.Check();
+        StringBuilder cad = new StringBuilder();
+
+        cad.AppendLine(luggage.Check());
+        string s = luggage.GetObjetosErroneos();
+        if (s.Length > 0)
+            cad.Append(s);
+
         bttnEnd.gameObject.SetActive(false);
         buttonBathroom.SetActive(false);
         endPanel.gameObject.SetActive(true);
-        endPanel.GetComponentInChildren<Text>().text = sol;
+        endPanel.GetComponentInChildren<Text>().text = cad.ToString();
 
         Tracker.T.setVar("EndButton", 1);
-        Tracker.T.setVar("Objetos que faltan : " + sol.Length, sol);
+        Tracker.T.setVar("Resultado: " + cad.Length, cad.ToString());
         Tracker.T.Completable.Completed(LevelSelector.LevelNameGlobal, CompletableTracker.Completable.Level, true);
     }
 }
