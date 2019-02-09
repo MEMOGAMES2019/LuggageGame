@@ -22,6 +22,9 @@ public class LevelManager : MonoBehaviour
     Vector3 initialLuggageScale;
     GameObject currentDrawer = null;
     State state;
+
+    // 0 = Room & 1 = Bathroom
+    int myActualRoom = 0;
     //public Image
     void Start()
     {
@@ -91,9 +94,18 @@ public class LevelManager : MonoBehaviour
     {
         if (state != State.END)
         {
-            state = State.ROOM;
-            roomCam.gameObject.SetActive(true);
-            bathroomCam.gameObject.SetActive(false);         
+            if (myActualRoom == 0)
+            {
+                state = State.ROOM;
+                roomCam.gameObject.SetActive(true);
+                bathroomCam.gameObject.SetActive(false);              
+            }
+            else if (myActualRoom == 1)
+            {
+                state = State.BATHROOM;
+                roomCam.gameObject.SetActive(false);
+                bathroomCam.gameObject.SetActive(true);        
+            }
             drawerCam.gameObject.SetActive(false);
             if (currentDrawer != null) currentDrawer.SetActive(false);
             buttonBackToRoom.SetActive(false);
@@ -121,12 +133,14 @@ public class LevelManager : MonoBehaviour
         if (currentDrawer != null) currentDrawer.SetActive(false);
         if (state == State.BATHROOM)
         {
+            myActualRoom = 0;
             Tracker.T.setVar("RoomButtom", 1);
             BackToRoom();
             buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[0];
         }
         else
         {
+            myActualRoom = 1;
             Tracker.T.setVar("BathRoomButton", 1);
             GoToBathroom();
         }
