@@ -48,6 +48,10 @@ public class LevelManager : MonoBehaviour
             state = State.FIRSTAIDKIT;
             bathroomCam.gameObject.SetActive(false);
             firstAidKitCam.gameObject.SetActive(true);
+
+            bttnEnd.gameObject.SetActive(false);
+            buttonBackToRoom.SetActive(true);
+
             buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[0];
             Tracker.T.Accessible.Accessed("FirstAidKit", AccessibleTracker.Accessible.Screen);
         }
@@ -62,16 +66,18 @@ public class LevelManager : MonoBehaviour
             state = State.DRAWER;
             roomCam.gameObject.SetActive(false);
             drawerCam.gameObject.SetActive(true);
+
+            buttonBackToRoom.SetActive(true);
+            drawerImage.SetActive(true);
+
             if (drawer != null)
             {
                 currentDrawer = drawer;
                 currentDrawer.SetActive(true);
-                Tracker.T.Accessible.Accessed("Drawer", AccessibleTracker.Accessible.Screen);
-            }
-            buttonBackToRoom.SetActive(true);
-            luggage.transform.position = initialLuggagePos;
-            luggage.transform.localScale = initialLuggageScale;
-            drawerImage.SetActive(true);
+                luggage.transform.position = initialLuggagePos;
+                luggage.transform.localScale = initialLuggageScale;
+                Tracker.T.Accessible.Accessed(drawer.name, AccessibleTracker.Accessible.Screen);                
+            }           
         }
     }
 
@@ -94,7 +100,7 @@ public class LevelManager : MonoBehaviour
     public void BackToRoom()
     {
         if (state != State.END)
-        {
+        {            
             if (myActualRoom == 0)
             {
                 state = State.ROOM;
@@ -108,7 +114,8 @@ public class LevelManager : MonoBehaviour
                 bathroomCam.gameObject.SetActive(true);
             }
             drawerCam.gameObject.SetActive(false);
-            if (currentDrawer != null) currentDrawer.SetActive(false);
+            if (currentDrawer != null)
+                currentDrawer.SetActive(false);
             buttonBackToRoom.SetActive(false);
             bttnEnd.gameObject.SetActive(true);
         }
@@ -118,7 +125,7 @@ public class LevelManager : MonoBehaviour
     {
         if (state != State.END)
         {
-            bttnEnd.gameObject.SetActive(false);
+            bttnEnd.gameObject.SetActive(true);
             state = State.BATHROOM;
             buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[1];
             drawerCam.gameObject.SetActive(false);
