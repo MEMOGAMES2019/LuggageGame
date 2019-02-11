@@ -961,6 +961,7 @@ GameObject:
   - component: {fileID: 206321469}
   - component: {fileID: 206321468}
   - component: {fileID: 206321467}
+  - component: {fileID: 206321470}
   m_Layer: 9
   m_Name: Camisa roja
   m_TagString: Untagged
@@ -1071,6 +1072,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &206321470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206321465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 2014704333}
 --- !u!1 &223300676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1165,6 +1179,7 @@ GameObject:
   - component: {fileID: 224520369}
   - component: {fileID: 224520368}
   - component: {fileID: 224520367}
+  - component: {fileID: 224520370}
   m_Layer: 9
   m_Name: Camisa amarilla
   m_TagString: Untagged
@@ -1275,6 +1290,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &224520370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 224520365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 2014704333}
 --- !u!1 &230190988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1287,6 +1315,7 @@ GameObject:
   - component: {fileID: 230190992}
   - component: {fileID: 230190991}
   - component: {fileID: 230190990}
+  - component: {fileID: 230190993}
   m_Layer: 9
   m_Name: Camisa hawaiana
   m_TagString: Untagged
@@ -1397,6 +1426,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &230190993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 230190988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 2014704333}
 --- !u!1 &273522580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1608,6 +1650,7 @@ GameObject:
   - component: {fileID: 360755017}
   - component: {fileID: 360755016}
   - component: {fileID: 360755015}
+  - component: {fileID: 360755018}
   m_Layer: 9
   m_Name: Reloj
   m_TagString: Untagged
@@ -1718,6 +1761,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &360755018
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 360755013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 2014704333}
 --- !u!1 &436914048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1854,6 +1910,7 @@ GameObject:
   - component: {fileID: 444980360}
   - component: {fileID: 444980359}
   - component: {fileID: 444980358}
+  - component: {fileID: 444980361}
   m_Layer: 9
   m_Name: Blusa
   m_TagString: Untagged
@@ -1964,6 +2021,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &444980361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 444980356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 2014704333}
 --- !u!1 &491961007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2006,6 +2076,7 @@ GameObject:
   - component: {fileID: 493926943}
   - component: {fileID: 493926942}
   - component: {fileID: 493926941}
+  - component: {fileID: 493926944}
   m_Layer: 9
   m_Name: Peine
   m_TagString: Untagged
@@ -2116,6 +2187,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &493926944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 493926939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 2014704333}
 --- !u!1 &494250222
 GameObject:
   m_ObjectHideFlags: 0
@@ -2302,6 +2386,7 @@ GameObject:
   - component: {fileID: 594773576}
   - component: {fileID: 594773575}
   - component: {fileID: 594773574}
+  - component: {fileID: 594773577}
   m_Layer: 9
   m_Name: Cepillo de dientes
   m_TagString: Untagged
@@ -2412,6 +2497,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &594773577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 594773572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 2014704333}
 --- !u!1 &611648553
 GameObject:
   m_ObjectHideFlags: 0
@@ -2424,6 +2522,7 @@ GameObject:
   - component: {fileID: 611648557}
   - component: {fileID: 611648556}
   - component: {fileID: 611648555}
+  - component: {fileID: 611648558}
   m_Layer: 9
   m_Name: Pantalon
   m_TagString: Untagged
@@ -2534,6 +2633,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &611648558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611648553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 2014704333}
 --- !u!1 &642318479
 GameObject:
   m_ObjectHideFlags: 0
@@ -2666,6 +2778,7 @@ GameObject:
   - component: {fileID: 717331987}
   - component: {fileID: 717331986}
   - component: {fileID: 717331985}
+  - component: {fileID: 717331988}
   m_Layer: 9
   m_Name: "Botas de monta\xF1a"
   m_TagString: Untagged
@@ -2776,6 +2889,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &717331988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 717331983}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 2014704333}
 --- !u!1 &725765023
 GameObject:
   m_ObjectHideFlags: 0
@@ -3489,6 +3615,7 @@ GameObject:
   - component: {fileID: 975955084}
   - component: {fileID: 975955083}
   - component: {fileID: 975955082}
+  - component: {fileID: 975955085}
   m_Layer: 9
   m_Name: Gorro
   m_TagString: Untagged
@@ -3599,6 +3726,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &975955085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975955080}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 2014704333}
 --- !u!1 &980354219
 GameObject:
   m_ObjectHideFlags: 0
@@ -4791,6 +4931,7 @@ GameObject:
   - component: {fileID: 1423353875}
   - component: {fileID: 1423353874}
   - component: {fileID: 1423353873}
+  - component: {fileID: 1423353876}
   m_Layer: 9
   m_Name: Gafas de buceo
   m_TagString: Untagged
@@ -4901,6 +5042,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1423353876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1423353871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 2014704333}
 --- !u!1 &1474190760
 GameObject:
   m_ObjectHideFlags: 0
@@ -5370,6 +5524,7 @@ GameObject:
   - component: {fileID: 1682657496}
   - component: {fileID: 1682657495}
   - component: {fileID: 1682657494}
+  - component: {fileID: 1682657497}
   m_Layer: 9
   m_Name: Chanclas
   m_TagString: Untagged
@@ -5480,6 +5635,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1682657497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1682657492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 2014704333}
 --- !u!1 &1728499187
 GameObject:
   m_ObjectHideFlags: 0

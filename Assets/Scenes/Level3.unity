@@ -274,6 +274,7 @@ GameObject:
   - component: {fileID: 63869541}
   - component: {fileID: 63869540}
   - component: {fileID: 63869539}
+  - component: {fileID: 63869542}
   m_Layer: 9
   m_Name: Pijama
   m_TagString: Untagged
@@ -384,6 +385,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &63869542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63869537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &79481263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1932,6 +1946,7 @@ GameObject:
   - component: {fileID: 435608628}
   - component: {fileID: 435608627}
   - component: {fileID: 435608626}
+  - component: {fileID: 435608629}
   m_Layer: 9
   m_Name: Colonia
   m_TagString: Untagged
@@ -2042,6 +2057,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &435608629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 435608624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &440065894
 GameObject:
   m_ObjectHideFlags: 0
@@ -2182,6 +2210,7 @@ GameObject:
   - component: {fileID: 470065461}
   - component: {fileID: 470065460}
   - component: {fileID: 470065459}
+  - component: {fileID: 470065462}
   m_Layer: 9
   m_Name: Pantalon largo
   m_TagString: Untagged
@@ -2292,6 +2321,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &470065462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 470065457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &472606198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2935,6 +2977,7 @@ GameObject:
   - component: {fileID: 589794915}
   - component: {fileID: 589794914}
   - component: {fileID: 589794913}
+  - component: {fileID: 589794916}
   m_Layer: 9
   m_Name: Chaqueta
   m_TagString: Untagged
@@ -3045,6 +3088,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &589794916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 589794911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &602900633
 GameObject:
   m_ObjectHideFlags: 0
@@ -3899,6 +3955,7 @@ GameObject:
   - component: {fileID: 707387220}
   - component: {fileID: 707387219}
   - component: {fileID: 707387218}
+  - component: {fileID: 707387221}
   m_Layer: 9
   m_Name: Bolso
   m_TagString: Untagged
@@ -4009,6 +4066,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &707387221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707387216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &759676652
 GameObject:
   m_ObjectHideFlags: 0
@@ -4021,6 +4091,7 @@ GameObject:
   - component: {fileID: 759676656}
   - component: {fileID: 759676655}
   - component: {fileID: 759676654}
+  - component: {fileID: 759676657}
   m_Layer: 9
   m_Name: Zapatos
   m_TagString: Untagged
@@ -4131,6 +4202,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &759676657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 759676652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &808814812
 GameObject:
   m_ObjectHideFlags: 0
@@ -4414,6 +4498,7 @@ GameObject:
   - component: {fileID: 865137556}
   - component: {fileID: 865137555}
   - component: {fileID: 865137554}
+  - component: {fileID: 865137557}
   m_Layer: 9
   m_Name: Pijama (1)
   m_TagString: Untagged
@@ -4524,6 +4609,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &865137557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865137552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &885962364
 GameObject:
   m_ObjectHideFlags: 0
@@ -4789,6 +4887,7 @@ GameObject:
   - component: {fileID: 892106450}
   - component: {fileID: 892106449}
   - component: {fileID: 892106448}
+  - component: {fileID: 892106451}
   m_Layer: 9
   m_Name: Zapatos (1)
   m_TagString: Untagged
@@ -4899,6 +4998,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &892106451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 892106446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &947174584
 GameObject:
   m_ObjectHideFlags: 0
@@ -5519,6 +5631,7 @@ GameObject:
   - component: {fileID: 1072273052}
   - component: {fileID: 1072273051}
   - component: {fileID: 1072273050}
+  - component: {fileID: 1072273053}
   m_Layer: 9
   m_Name: Pijama invierno
   m_TagString: Untagged
@@ -5629,6 +5742,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1072273053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1072273048}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &1078827460
 GameObject:
   m_ObjectHideFlags: 0
@@ -6218,6 +6344,7 @@ GameObject:
   - component: {fileID: 1280388305}
   - component: {fileID: 1280388304}
   - component: {fileID: 1280388303}
+  - component: {fileID: 1280388306}
   m_Layer: 9
   m_Name: Calcetines invierno
   m_TagString: Untagged
@@ -6328,6 +6455,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1280388306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1280388301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &1288569439
 GameObject:
   m_ObjectHideFlags: 0
@@ -6816,6 +6956,7 @@ GameObject:
   - component: {fileID: 1383318942}
   - component: {fileID: 1383318941}
   - component: {fileID: 1383318940}
+  - component: {fileID: 1383318943}
   m_Layer: 9
   m_Name: Neceser
   m_TagString: Untagged
@@ -6926,6 +7067,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1383318943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383318938}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &1422883808
 GameObject:
   m_ObjectHideFlags: 0
@@ -6938,6 +7092,7 @@ GameObject:
   - component: {fileID: 1422883812}
   - component: {fileID: 1422883811}
   - component: {fileID: 1422883810}
+  - component: {fileID: 1422883813}
   m_Layer: 9
   m_Name: Bermudas
   m_TagString: Untagged
@@ -7048,6 +7203,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1422883813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422883808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &1506604437
 GameObject:
   m_ObjectHideFlags: 0
@@ -7060,6 +7228,7 @@ GameObject:
   - component: {fileID: 1506604441}
   - component: {fileID: 1506604440}
   - component: {fileID: 1506604439}
+  - component: {fileID: 1506604442}
   m_Layer: 9
   m_Name: Falda
   m_TagString: Untagged
@@ -7170,6 +7339,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1506604442
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1506604437}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &1567594485
 GameObject:
   m_ObjectHideFlags: 0
@@ -7603,6 +7785,7 @@ GameObject:
   - component: {fileID: 1611877302}
   - component: {fileID: 1611877301}
   - component: {fileID: 1611877300}
+  - component: {fileID: 1611877303}
   m_Layer: 9
   m_Name: "Ri\xF1onera"
   m_TagString: Untagged
@@ -7713,6 +7896,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1611877303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611877298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &1664628338
 GameObject:
   m_ObjectHideFlags: 0
@@ -8044,6 +8240,7 @@ GameObject:
   - component: {fileID: 1687438871}
   - component: {fileID: 1687438870}
   - component: {fileID: 1687438869}
+  - component: {fileID: 1687438872}
   m_Layer: 9
   m_Name: Deportivas
   m_TagString: Untagged
@@ -8154,6 +8351,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1687438872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687438867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &1703652722
 GameObject:
   m_ObjectHideFlags: 0
@@ -8288,6 +8498,7 @@ GameObject:
   - component: {fileID: 1721896962}
   - component: {fileID: 1721896961}
   - component: {fileID: 1721896960}
+  - component: {fileID: 1721896963}
   m_Layer: 9
   m_Name: Calcetines cortos
   m_TagString: Untagged
@@ -8398,6 +8609,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1721896963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721896958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &1728769078
 GameObject:
   m_ObjectHideFlags: 0
@@ -8410,6 +8634,7 @@ GameObject:
   - component: {fileID: 1728769082}
   - component: {fileID: 1728769081}
   - component: {fileID: 1728769080}
+  - component: {fileID: 1728769083}
   m_Layer: 9
   m_Name: Gafas de ski
   m_TagString: Untagged
@@ -8520,6 +8745,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1728769083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1728769078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &1745481124
 GameObject:
   m_ObjectHideFlags: 0
@@ -8532,6 +8770,7 @@ GameObject:
   - component: {fileID: 1745481128}
   - component: {fileID: 1745481127}
   - component: {fileID: 1745481126}
+  - component: {fileID: 1745481129}
   m_Layer: 9
   m_Name: Cinturon
   m_TagString: Untagged
@@ -8642,6 +8881,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1745481129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1745481124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &1747376389
 GameObject:
   m_ObjectHideFlags: 0
@@ -8932,6 +9184,7 @@ GameObject:
   - component: {fileID: 1766174599}
   - component: {fileID: 1766174598}
   - component: {fileID: 1766174597}
+  - component: {fileID: 1766174600}
   m_Layer: 9
   m_Name: Gafas de buceo
   m_TagString: Untagged
@@ -9042,6 +9295,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1766174600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766174595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &1809637776
 GameObject:
   m_ObjectHideFlags: 0
@@ -9174,6 +9440,7 @@ GameObject:
   - component: {fileID: 1810062417}
   - component: {fileID: 1810062416}
   - component: {fileID: 1810062415}
+  - component: {fileID: 1810062418}
   m_Layer: 9
   m_Name: camiseta verde
   m_TagString: Untagged
@@ -9284,6 +9551,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1810062418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1810062413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &1823221281
 GameObject:
   m_ObjectHideFlags: 0
@@ -9555,6 +9835,7 @@ GameObject:
   - component: {fileID: 1844746188}
   - component: {fileID: 1844746187}
   - component: {fileID: 1844746186}
+  - component: {fileID: 1844746189}
   m_Layer: 9
   m_Name: Pantalon corto
   m_TagString: Untagged
@@ -9665,6 +9946,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1844746189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1844746184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &1859704353
 GameObject:
   m_ObjectHideFlags: 0
@@ -10052,6 +10346,7 @@ GameObject:
   - component: {fileID: 1915681746}
   - component: {fileID: 1915681745}
   - component: {fileID: 1915681744}
+  - component: {fileID: 1915681747}
   m_Layer: 9
   m_Name: Guia viajes
   m_TagString: Untagged
@@ -10162,6 +10457,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1915681747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1915681742}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &1931400130
 GameObject:
   m_ObjectHideFlags: 0
@@ -10294,6 +10602,7 @@ GameObject:
   - component: {fileID: 1945834285}
   - component: {fileID: 1945834287}
   - component: {fileID: 1945834286}
+  - component: {fileID: 1945834288}
   m_Layer: 9
   m_Name: Libro
   m_TagString: Untagged
@@ -10404,6 +10713,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.83}
   m_EdgeRadius: 0
+--- !u!114 &1945834288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945834283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &1966661970
 GameObject:
   m_ObjectHideFlags: 0
@@ -10771,6 +11093,7 @@ GameObject:
   - component: {fileID: 2071408614}
   - component: {fileID: 2071408613}
   - component: {fileID: 2071408612}
+  - component: {fileID: 2071408615}
   m_Layer: 9
   m_Name: jersey
   m_TagString: Untagged
@@ -10881,6 +11204,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2071408615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071408610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &2076945370
 GameObject:
   m_ObjectHideFlags: 0
@@ -11167,6 +11503,7 @@ GameObject:
   - component: {fileID: 2130027991}
   - component: {fileID: 2130027990}
   - component: {fileID: 2130027989}
+  - component: {fileID: 2130027992}
   m_Layer: 9
   m_Name: Paracetamol
   m_TagString: Untagged
@@ -11277,6 +11614,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2130027992
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2130027987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelInfo: {fileID: 511946576}
 --- !u!1 &2143448523
 GameObject:
   m_ObjectHideFlags: 0
