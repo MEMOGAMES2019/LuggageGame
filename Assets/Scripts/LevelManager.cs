@@ -52,7 +52,7 @@ public class LevelManager : MonoBehaviour
             bttnEnd.gameObject.SetActive(false);
             buttonBackToRoom.SetActive(true);
 
-            buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[0];
+            buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[1];
             Tracker.T.Accessible.Accessed("FirstAidKit", AccessibleTracker.Accessible.Screen);
         }
     }
@@ -62,11 +62,18 @@ public class LevelManager : MonoBehaviour
         if (state != State.END)
         {
             bttnEnd.gameObject.SetActive(false);
-            buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[0];
             state = State.DRAWER;
             roomCam.gameObject.SetActive(false);
             drawerCam.gameObject.SetActive(true);
 
+            if (myActualRoom == 0)
+            {
+                buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[0];
+            }
+            else if (myActualRoom == 1)
+            {
+                buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[1];
+            }
             buttonBackToRoom.SetActive(true);
             drawerImage.SetActive(true);
 
@@ -99,6 +106,7 @@ public class LevelManager : MonoBehaviour
 
     public void BackToRoom()
     {
+        // boton salir de la maleta
         if (state != State.END)
         {            
             if (myActualRoom == 0)
@@ -139,7 +147,7 @@ public class LevelManager : MonoBehaviour
     public void BathRoomButton()
     {
         if (currentDrawer != null) currentDrawer.SetActive(false);
-        if (state == State.BATHROOM)
+        if (myActualRoom == 1)
         {
             myActualRoom = 0;
             Tracker.T.setVar("RoomButtom", 1);
