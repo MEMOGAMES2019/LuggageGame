@@ -61,8 +61,6 @@ namespace AssetPackage
     public interface IWebServiceRequestAsync
     {
 
-#warning Add Tag or Data parameter to this call so we can identify it in IWebServiceResponse?
-
         /// <summary>
         /// Web service request.
         /// </summary>
@@ -77,7 +75,9 @@ namespace AssetPackage
             Uri uri,
             Dictionary<string, string> headers,
             string body,
+#pragma warning disable CS0618 // El tipo o el miembro están obsoletos
             IWebServiceResponseAsync response
+#pragma warning restore CS0618 // El tipo o el miembro están obsoletos
             );
     }
 }

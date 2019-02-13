@@ -1,162 +1,242 @@
-﻿using System.Collections;
+﻿using RAGE.Analytics;
+using System;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using RAGE.Analytics;
+using UnityEngine.UI;
+using static Assets.Scripts.Constantes;
 
-public class LevelSelector : MonoBehaviour {
+public class LevelSelector : MonoBehaviour
+{
+    #region Variables de Unity
 
-    public GameObject weatherB;
-    public GameObject genreB;
-    public GameObject levelsB;
-    public GameObject listPanel;
-    public GameObject tutorialButton;
+    [SerializeField]
+    private GameObject _climaButtons;
+    [SerializeField]
+    private GameObject _generoButtons;
+    [SerializeField]
+    private GameObject _nivelButtons;
+    [SerializeField]
+    private GameObject _panelList;
+    [SerializeField]
+    private GameObject _tutorialButton;
+    [SerializeField]
+    private Text _pregunta;
 
-    // Tracker
-    public static string LevelNameGlobal = string.Empty;
+    #endregion
 
-    Text textList;
+    #region Atributos
 
-    int genre;
-    int weather;
-    int level;
+    /// <summary>
+    /// Botones para elegir clima.
+    /// </summary>
+    public GameObject ClimaButtons { get => _climaButtons; set => _climaButtons = value; }
+
+    /// <summary>
+    /// Botones para elegir género.
+    /// </summary>
+    public GameObject GeneroButtons { get => _generoButtons; set => _generoButtons = value; }
+
+    /// <summary>
+    /// Botones para elegir nivel de dificultad.
+    /// </summary>
+    public GameObject NivelButtons { get => _nivelButtons; set => _nivelButtons = value; }
+
+    /// <summary>
+    /// Panel donde se encuentra la lista de objetos a recoger.
+    /// </summary>
+    public GameObject PanelList { get => _panelList; set => _panelList = value; }
+
+    /// <summary>
+    /// Pregunta que se le hace al jugador.
+    /// </summary>
+    public Text PreguntaText { get => _pregunta; set => _pregunta = value; }
+
+    /// <summary>
+    /// Botones para dar comienzo al tutorial.
+    /// </summary>
+    public GameObject TutorialButton { get => _tutorialButton; set => _tutorialButton = value; }
+
+    /// <summary>
+    /// Nombre completo del nivel.
+    /// </summary>
+    public static string LevelNameGlobal { get; set; } = string.Empty;
+
+    /// <summary>
+    /// Lista de objetos a recoger.
+    /// </summary>
+    public Text TextList { get; set; }
+
+    /// <summary>
+    /// Nivel establecido por el jugador.
+    /// </summary>
+    public int Level { get; set; }
+
+    #endregion
+
+    #region Eventos
 
     private void Start()
     {
-        weatherB.SetActive(true);
-        genreB.SetActive(false);
-        levelsB.SetActive(false);
-        listPanel.SetActive(false);
-        tutorialButton.SetActive(true);
-        textList = listPanel.GetComponentInChildren<Text>();
+        GeneroButtons.SetActive(false);
+        NivelButtons.SetActive(false);
+        PanelList.SetActive(false);
+        ClimaButtons.SetActive(true);
+        TutorialButton.SetActive(true);
+        TextList = PanelList.GetComponentInChildren<Text>();
+        PreguntaText.text = "¿En qué clima quieres jugar?";
     }
-    public void Genre(int g)
+
+    #endregion
+
+    #region Métodos públicos
+
+    /// <summary>
+    /// Establece el género en el que se cargarán los datos.
+    /// </summary>
+    /// <param name="g">Valor númerico del género: 0 -> NEUTRAL, 1 -> HOMBRE, 2 -> MUJER</param>
+    public void SetGenre(int g)
     {
-        GM.gm.setGenre(g);
-        genre = g;
-        genreB.SetActive(false);
-        levelsB.SetActive(true);
+        GM.Gm.Genero = (Genero)g;
+        GeneroButtons.SetActive(false);
+        NivelButtons.SetActive(true);
+        PreguntaText.text = "¿En qué nivel de dificultad quieres jugar?";
     }
-    public void Weather(int w)
+
+    /// <summary>
+    /// Establece el clima en el que se cargarán los datos.
+    /// </summary>
+    /// <param name="w">Valor númerico del clima: 0 -> AMBOS, 1 -> CÁLIDO, 2 -> FRÍO</param>
+    public void SetWeather(int w)
     {
-        weatherB.SetActive(false);
-        weather = w;
-        GM.gm.setWeather(w);
-        genreB.SetActive(true);
+        GM.Gm.Clima = (Clima)w;
+        ClimaButtons.SetActive(false);
+        GeneroButtons.SetActive(true);
+        PreguntaText.text = "¿Con qué género quieres jugar?";
     }
-   
-    public void Level(int l)
+
+    /// <summary>
+    /// Establece el nivel de dificultad en el que se cargaran los datos del fichero.
+    /// </summary>
+    /// <param name="l">Nivel de dificultad del juego: 0 -> Tutorial</param>
+    public void SetLevel(int l)
     {
-        level = l;
-        weatherB.SetActive(false);
-        levelsB.SetActive(false);
-        listPanel.SetActive(true);
-        genreB.SetActive(false);
-        tutorialButton.SetActive(false);
+        Level = l;
+        ClimaButtons.SetActive(false);
+        NivelButtons.SetActive(false);
+        GeneroButtons.SetActive(false);
+        TutorialButton.SetActive(false);
+        PanelList.SetActive(true);
+        PreguntaText.text = string.Empty;
 
         //reiniciar la variable
         LevelNameGlobal = string.Empty;
-
-        switch (l)
+        if (l != 0)
         {
-            case 1:
-                if (weather == 1)
-                {
-                    loadList("Level1Warm", 6);
-                    LevelNameGlobal = "Level1Warm";
-                }
-                else {
-                    loadList("Level1Cold", 6);
-                    LevelNameGlobal = "Level1Cold";
-                }
-                break;
-            case 2:
-                if (weather == 1) {
-                    loadList("Level2Warm", 9);
-                    LevelNameGlobal = "Level2Warm";
-                }
-                else {
-                    loadList("Level2Cold", 9);
-                    LevelNameGlobal = "Level2Cold";
-                }
-              
-                break;
-            case 3:
-                if (weather == 1)
-                {
-                    loadList("Level3Warm", 12);
-                    LevelNameGlobal = "Level3Warm";
-                }
-                else
-                {
-                    loadList("Level3Cold", 12);
-                    LevelNameGlobal = "Level3Cold";
-                }
+            switch (l)
+            {
+                case 1:
+                    LevelNameGlobal = "Level1";
+                    break;
+                case 2:
+                    LevelNameGlobal = "Level2";
+                    break;
+                case 3:
+                    LevelNameGlobal = "Level3";
+                    break;
+            }
 
-                break;
-            case 4: //Tutorial
-                LevelNameGlobal = "LevelTutorial";
-                GM.gm.setGenre(0);
-                GM.gm.setWeather(0);
-                string[] arrayList = new string[4];
-                arrayList[0] = "Camiseta amarilla" + (char)13;
-                arrayList[1] = "Deportivas" + (char)13;
-                arrayList[2] = "Cepillo de dientes" + (char)13;
-
-                GM.gm.setList(arrayList);
-                textList.text = "Deberás identificar los siguientes objetos y guardarlos en la maleta.\nMemorízalos y haz click en el botón play cuando estés listo:\n\n-Camiseta amarilla.\n-Deportivas.\n-Cepillo de dientes";
-                break;
+            switch (GM.Gm.Clima)
+            {
+                case Clima.CALIDO:
+                    LevelNameGlobal = string.Concat(LevelNameGlobal, "Warm");
+                    break;
+                case Clima.FRIO:
+                    LevelNameGlobal = string.Concat(LevelNameGlobal, "Cold");
+                    break;
+            }
+            LoadList(LevelNameGlobal);
+        }
+        else
+        {
+            LevelNameGlobal = "LevelTutorial";
+            GM.Gm.Genero = Genero.NEUTRAL;
+            GM.Gm.Clima = Clima.AMBOS;
+            GM.Gm.List = new List<string>
+            {
+                "Camiseta amarilla",
+                "Deportivas",
+                "Cepillo de dientes"
+            };
+            StringBuilder cad = new StringBuilder();
+            cad.AppendLine("Deberás identificar los siguientes objetos y guardarlos en la maleta.");
+            cad.AppendLine("Memorízalos y haz click en el botón play cuando estés listo");
+            cad.AppendLine();
+            cad.AppendLine("- Camiseta amarilla");
+            cad.AppendLine("- Deportivas");
+            cad.AppendLine("- Cepillo de dientes");
+            TextList.text = cad.ToString();
+            TextList.alignment = TextAnchor.MiddleLeft;
         }
 
         Tracker.T.Completable.Initialized(LevelNameGlobal, CompletableTracker.Completable.Level);
     }
+
+    /// <summary>
+    /// Comienza el juego según los parámetros establecidos.
+    /// </summary>
     public void Play()
     {
-        if(level != 4)
-            SceneManager.LoadScene("Level" + level.ToString());
-        else 
-            SceneManager.LoadScene("Tutorial");
+        string levelPlay = (Level != 0) ? "Level" + Level.ToString() : "Tutorial";
+        SceneManager.LoadScene(levelPlay);
+    }
 
-    }
-    void loadList(string name, int numWords)
+    #endregion
+
+    #region Métodos privados
+
+    /// <summary>
+    /// Carga la lista de objetos a poner en la maleta.
+    /// </summary>
+    /// <param name="name">Nombre del fichero donde se van a carar los datos.</param>
+    private void LoadList(string name)
     {
-        string finalList = "";
-        string [] arrayList = new string[12];
-        TextAsset list = (TextAsset)Resources.Load("Lists/" + name, typeof(TextAsset));
-        string [] s = list.text.Split('\n');
-        int i = 1;
-        int wordsSaved = 0;
-        while (s[i] != "F" + (char)13)
-        {
-            if (genre == 1)
-            {
-                arrayList[wordsSaved] = s[i];
-                wordsSaved++;
-                finalList += "- " + s[i] + "\n";
-            }
-            i++;
-        }
-        i++;
-        while (s[i] != "N" + (char)13)
-        {
-            if (genre == 2)
-            {
-                arrayList[wordsSaved] = s[i];
-                wordsSaved++;
-                finalList += "- " + s[i] + "\n";
-            }
-            i++;
-        }
-        i++;
-        while (s[i] != "Fin")
-        {
-            arrayList[wordsSaved] = s[i];
-            wordsSaved++;
-            finalList += "- " + s[i] + "\n";
-            i++;
-        }
-        GM.gm.setList(arrayList);
-        textList.text = finalList;
+        TextList.text = string.Concat("Tienes que meter estos objetos en la maleta:", Environment.NewLine);
+        GM.Gm.List = new List<string>();
+
+        TextAsset list = (TextAsset)Resources.Load(string.Concat("Lists/", name), typeof(TextAsset));
+        Queue<string> cola = new Queue<string>(list.text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries));
+        cola.Dequeue();
+
+        GetPrendas(cola, Genero.HOMBRE, "F");
+        GetPrendas(cola, Genero.MUJER, "N");
+        GetPrendas(cola, Genero.NEUTRAL, "Fin");
     }
+
+    /// <summary>
+    /// Recoge del fichero las prendas según los parámetros.
+    /// </summary>
+    /// <param name="cola">Cola con la lista de objetos a procesar.</param>
+    /// <param name="genero">Genero de la prenda a recoger.</param>
+    /// <param name="fin">Hasta donde leemos del fichero.</param>
+    private void GetPrendas(Queue<string> cola, Genero genero, string fin)
+    {
+        StringBuilder finalList = new StringBuilder();
+        string objeto = cola.Dequeue();
+        while (!objeto.Equals(fin))
+        {
+            if (GM.Gm.Genero == genero || genero == Genero.NEUTRAL)
+            {
+                GM.Gm.List.Add(objeto);
+                finalList.AppendLine(string.Concat("- ", objeto));
+            }
+            objeto = cola.Dequeue();
+        }
+
+        TextList.text = string.Concat(TextList.text, finalList.ToString());
+    }
+
+    #endregion
+
 }

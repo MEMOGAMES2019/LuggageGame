@@ -1,34 +1,73 @@
-﻿using UnityEngine;
-using RAGE.Analytics;
+﻿using RAGE.Analytics;
+using System;
+using UnityEngine;
+using static Assets.Scripts.Constantes;
 
 [RequireComponent(typeof(BoxCollider2D))]
 public class DraggNDrop : MonoBehaviour
 {
+    #region Variables Unity
+
+    [SerializeField]
+    private Item _objetoMaleta;
+    [SerializeField]
+    private int _clima;
+    [SerializeField]
+    private int _genero;
+
+    #endregion
+
+    #region Constantes
+
     private float OFFSET_Z { get { return 10.0f; } }
 
-    public Item twin;
-    Luggage luggage;
-    bool itsInTarget;
-    private Vector3 StartPoint;
-    private Vector3 Offset;
-    public bool warm;
-    public bool cold;
-    public bool female;
-    public bool male;
-    int genre = 1; //0 --> neutral, 1 --> male, 2 --> female;
-    int weather = 0; //0--> warm, 1-->cold
+    #endregion
+
+    #region Atributos
+
+    /// <summary>
+    /// Objeto que referencia al guardado en la maleta.
+    /// </summary>
+    public Item ObjetoMaleta { get => _objetoMaleta; set => _objetoMaleta = value; }
+
+    /// <summary>
+    /// Clima del objeto.
+    /// </summary>
+    public Clima Clima { get => (Clima)_clima; set => _clima = (int)value; }
+
+    /// <summary>
+    /// Género del objeto.
+    /// </summary>
+    public Genero Genero { get => (Genero)_genero; set => _genero = (int)value; }
+
+    /// <summary>
+    /// Maleta del juego.
+    /// </summary>
+    public Luggage Maleta { get; set; }
+
+    public bool ItsInTarget { get; set; }
+
+    /// <summary>
+    /// Posición inicial del movimiento.
+    /// </summary>
+    private Vector3 StartPoint { get; set; }
+
+    /// <summary>
+    /// Posición actual del movimiento.
+    /// </summary>
+    private Vector3 Offset { get; set; }
+
+    #endregion
+
+    #region Eventos
 
     void Start()
     {
-        genre = GM.gm.getGenre();
-        weather = GM.gm.getWeather();
-        if ((cold && weather == 0) || (warm && weather == 1)) gameObject.SetActive(false);
-        else
-        {
-            if ((female && genre == 1) || (male && genre == 2)) gameObject.SetActive(false);
-        }
-        itsInTarget = false;
-        luggage = twin.transform.parent.gameObject.GetComponent<Luggage>();
+        if (Clima != Clima.AMBOS && Clima != GM.Gm.Clima) gameObject.SetActive(false);
+        else if (Genero != Genero.NEUTRAL && Genero != GM.Gm.Genero) gameObject.SetActive(false);
+
+        ItsInTarget = false;
+        Maleta = ObjetoMaleta.transform.parent.gameObject.GetComponent<Luggage>();
     }
 
     /// <summary>
@@ -59,24 +98,32 @@ public class DraggNDrop : MonoBehaviour
     {
         Tracker.T.setVar("Deja de clickar en objeto", 1);
         transform.position = StartPoint;
-        if (itsInTarget)
+        if (ItsInTarget)
         {
-            luggage.saveObject(twin);
-            twin.setTwin(gameObject);
+            Maleta.SaveObject(ObjetoMaleta);
+            ObjetoMaleta.SetTwin(gameObject);
             gameObject.SetActive(false);
         }
-        itsInTarget = false;
+        ItsInTarget = false;
     }
-    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        itsInTarget = true;
+        if (collision == null)
+            throw new ArgumentNullException(nameof(collision));
+
+        ItsInTarget = true;
 
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-        itsInTarget = false;
+        if (collision == null)
+            throw new ArgumentNullException(nameof(collision));
+
+        ItsInTarget = false;
     }
 
+    #endregion
 
 }

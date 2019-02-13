@@ -1,16 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(PolygonCollider2D))]
-public class Drawer : MonoBehaviour {
+public class Drawer : MonoBehaviour
+{
 
     public LevelManager lvlMngr;
     public GameObject drawer;
     SpriteRenderer spRenderer;
-	void Start () {
+    void Start()
+    {
         spRenderer = GetComponent<SpriteRenderer>();
-	}
+    }
 
     /// <summary>
     /// Cuando el ratón pasa por encima del objeto.

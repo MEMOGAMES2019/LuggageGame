@@ -1,19 +1,19 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using RAGE.Analytics;
+using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
-using RAGE.Analytics;
 
-public class LevelManager : MonoBehaviour {
+public class LevelManager : MonoBehaviour
+{
 
-    enum State { BATHROOM, ROOM, DRAWER, LUGGAGE, FIRSTAIDKIT, END};
+    enum State { BATHROOM, ROOM, DRAWER, LUGGAGE, FIRSTAIDKIT, END };
 
     public Camera roomCam;
     public Camera bathroomCam;
     public Camera drawerCam;
     public Camera firstAidKitCam;
     public GameObject buttonBathroom;
-    public Sprite [] bttnBathroom;
+    public Sprite[] bttnBathroom;
     public GameObject buttonBackToRoom;
     public GameObject bttnEnd;
     public GameObject endPanel;
@@ -23,8 +23,12 @@ public class LevelManager : MonoBehaviour {
     Vector3 initialLuggageScale;
     GameObject currentDrawer = null;
     State state;
+
+    // 0 = Room & 1 = Bathroom
+    int myActualRoom = 0;
     //public Image
-	void Start () {
+    void Start()
+    {
         state = State.ROOM;
         roomCam.gameObject.SetActive(true);
         bathroomCam.gameObject.SetActive(false);
@@ -35,8 +39,8 @@ public class LevelManager : MonoBehaviour {
         initialLuggagePos = luggage.transform.position;
         initialLuggageScale = luggage.transform.localScale;
         bttnEnd.gameObject.SetActive(true);
-	}
-	
+    }
+
     public void GoToFirstAidKit()
     {
         if (state != State.END)
@@ -44,7 +48,11 @@ public class LevelManager : MonoBehaviour {
             state = State.FIRSTAIDKIT;
             bathroomCam.gameObject.SetActive(false);
             firstAidKitCam.gameObject.SetActive(true);
-            buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[0];
+
+            bttnEnd.gameObject.SetActive(false);
+            buttonBackToRoom.SetActive(true);
+
+            buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[1];
             Tracker.T.Accessible.Accessed("FirstAidKit", AccessibleTracker.Accessible.Screen);
         }
     }
@@ -54,20 +62,29 @@ public class LevelManager : MonoBehaviour {
         if (state != State.END)
         {
             bttnEnd.gameObject.SetActive(false);
-            buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[0];
             state = State.DRAWER;
             roomCam.gameObject.SetActive(false);
             drawerCam.gameObject.SetActive(true);
+
+            if (myActualRoom == 0)
+            {
+                buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[0];
+            }
+            else if (myActualRoom == 1)
+            {
+                buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[1];
+            }
+            buttonBackToRoom.SetActive(true);
+            drawerImage.SetActive(true);
+
             if (drawer != null)
             {
                 currentDrawer = drawer;
                 currentDrawer.SetActive(true);
-                Tracker.T.Accessible.Accessed("Drawer", AccessibleTracker.Accessible.Screen);
-            }
-            buttonBackToRoom.SetActive(true);
-            luggage.transform.position = initialLuggagePos;
-            luggage.transform.localScale = initialLuggageScale;
-            drawerImage.SetActive(true);
+                luggage.transform.position = initialLuggagePos;
+                luggage.transform.localScale = initialLuggageScale;
+                Tracker.T.Accessible.Accessed(drawer.name, AccessibleTracker.Accessible.Screen);                
+            }           
         }
     }
 
@@ -89,13 +106,24 @@ public class LevelManager : MonoBehaviour {
 
     public void BackToRoom()
     {
+        // boton salir de la maleta
         if (state != State.END)
-        {
-            state = State.ROOM;
-            roomCam.gameObject.SetActive(true);
-            bathroomCam.gameObject.SetActive(false);
+        {            
+            if (myActualRoom == 0)
+            {
+                state = State.ROOM;
+                roomCam.gameObject.SetActive(true);
+                bathroomCam.gameObject.SetActive(false);
+            }
+            else if (myActualRoom == 1)
+            {
+                state = State.BATHROOM;
+                roomCam.gameObject.SetActive(false);
+                bathroomCam.gameObject.SetActive(true);
+            }
             drawerCam.gameObject.SetActive(false);
-            if (currentDrawer != null) currentDrawer.SetActive(false);
+            if (currentDrawer != null)
+                currentDrawer.SetActive(false);
             buttonBackToRoom.SetActive(false);
             bttnEnd.gameObject.SetActive(true);
         }
@@ -105,7 +133,7 @@ public class LevelManager : MonoBehaviour {
     {
         if (state != State.END)
         {
-            bttnEnd.gameObject.SetActive(false);
+            bttnEnd.gameObject.SetActive(true);
             state = State.BATHROOM;
             buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[1];
             drawerCam.gameObject.SetActive(false);
@@ -119,30 +147,38 @@ public class LevelManager : MonoBehaviour {
     public void BathRoomButton()
     {
         if (currentDrawer != null) currentDrawer.SetActive(false);
-        if (state == State.BATHROOM)
+        if (myActualRoom == 1)
         {
+            myActualRoom = 0;
             Tracker.T.setVar("RoomButtom", 1);
             BackToRoom();
             buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[0];
         }
-        else 
+        else
         {
+            myActualRoom = 1;
             Tracker.T.setVar("BathRoomButton", 1);
             GoToBathroom();
         }
     }
 
-   public void End()
+    public void End()
     {
         state = State.END;
-        string sol = luggage.Check();
+        StringBuilder cad = new StringBuilder();
+
+        cad.AppendLine(luggage.Check());
+        string s = luggage.GetObjetosErroneos();
+        if (s.Length > 0)
+            cad.Append(s);
+
         bttnEnd.gameObject.SetActive(false);
         buttonBathroom.SetActive(false);
         endPanel.gameObject.SetActive(true);
-        endPanel.GetComponentInChildren<Text>().text = sol;
+        endPanel.GetComponentInChildren<Text>().text = cad.ToString();
 
         Tracker.T.setVar("EndButton", 1);
-        Tracker.T.setVar("Objetos que faltan : " + sol.Length, sol);
+        Tracker.T.setVar("Resultado: " + cad.Length, cad.ToString());
         Tracker.T.Completable.Completed(LevelSelector.LevelNameGlobal, CompletableTracker.Completable.Level, true);
     }
 }
