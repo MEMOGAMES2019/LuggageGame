@@ -104,6 +104,13 @@ public class GM : MonoBehaviour
     {
         SceneManager.LoadScene(scene);
     }
+    /**
+     * Método para el botón salir del menú
+     */
+    public void doExitGame()
+    {
+        Application.Quit();
+    }
 
     #endregion
 
