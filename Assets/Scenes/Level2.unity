@@ -2423,7 +2423,7 @@ GameObject:
   - component: {fileID: 452117229}
   - component: {fileID: 452117232}
   m_Layer: 9
-  m_Name: Guia viajes
+  m_Name: "Gu\xEDa de viajes"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2822,7 +2822,7 @@ GameObject:
   - component: {fileID: 498028782}
   - component: {fileID: 498028785}
   m_Layer: 9
-  m_Name: Cinturon
+  m_Name: "Cintur\xF3n"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2973,8 +2973,8 @@ Transform:
   m_Children:
   - {fileID: 93534206}
   - {fileID: 585288818}
-  - {fileID: 1905493100}
   - {fileID: 1896814431}
+  - {fileID: 1905493100}
   - {fileID: 2005453503}
   - {fileID: 498028781}
   - {fileID: 316885686}
@@ -7722,7 +7722,7 @@ GameObject:
   - component: {fileID: 1509433760}
   - component: {fileID: 1509433763}
   m_Layer: 9
-  m_Name: Pantalon largo
+  m_Name: "Pantal\xF3n largo"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7857,7 +7857,7 @@ GameObject:
   - component: {fileID: 1653535233}
   - component: {fileID: 1653535232}
   m_Layer: 0
-  m_Name: Pantalon largo
+  m_Name: "Pantal\xF3n largo"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8763,7 +8763,7 @@ GameObject:
   - component: {fileID: 1896814428}
   - component: {fileID: 1896814432}
   m_Layer: 9
-  m_Name: Camiseta Tirantes
+  m_Name: Camiseta de tirantes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8870,7 +8870,7 @@ Transform:
   m_LocalScale: {x: 0.23748647, y: 0.224474, z: 0.224474}
   m_Children: []
   m_Father: {fileID: 515930248}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1896814432
 MonoBehaviour:
@@ -9126,7 +9126,7 @@ Transform:
   m_LocalScale: {x: 0.17005566, y: 0.17005566, z: 0.17005566}
   m_Children: []
   m_Father: {fileID: 515930248}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1905493101
 MonoBehaviour:
@@ -9991,7 +9991,7 @@ GameObject:
   - component: {fileID: 2060176486}
   - component: {fileID: 2060176485}
   m_Layer: 9
-  m_Name: Paracetamol
+  m_Name: Bote de medicinas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

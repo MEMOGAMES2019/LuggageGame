@@ -1181,7 +1181,7 @@ GameObject:
   - component: {fileID: 224520367}
   - component: {fileID: 224520370}
   m_Layer: 9
-  m_Name: Camisa amarilla
+  m_Name: Camiseta amarilla
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1912,7 +1912,7 @@ GameObject:
   - component: {fileID: 444980358}
   - component: {fileID: 444980361}
   m_Layer: 9
-  m_Name: Blusa
+  m_Name: Blusa verde
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2524,7 +2524,7 @@ GameObject:
   - component: {fileID: 611648555}
   - component: {fileID: 611648558}
   m_Layer: 9
-  m_Name: Pantalon
+  m_Name: "Pantal\xF3n"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5405,7 +5405,7 @@ GameObject:
   - component: {fileID: 1641042391}
   - component: {fileID: 1641042390}
   m_Layer: 0
-  m_Name: CamisaHawaiana
+  m_Name: Camisa hawaiana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7888,6 +7888,36 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
+        type: 3}
+      propertyPath: cold
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
+        type: 3}
+      propertyPath: female
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
+        type: 3}
+      propertyPath: warm
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
+        type: 3}
+      propertyPath: male
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
+        type: 3}
+      propertyPath: _clima
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
+        type: 3}
+      propertyPath: _genero
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4436745271860646, guid: 57c25d4b5c9e28049b7fd9340662493b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 226.72217
@@ -7919,36 +7949,6 @@ PrefabInstance:
     - target: {fileID: 4436745271860646, guid: 57c25d4b5c9e28049b7fd9340662493b, type: 3}
       propertyPath: m_RootOrder
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
-        type: 3}
-      propertyPath: cold
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
-        type: 3}
-      propertyPath: female
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
-        type: 3}
-      propertyPath: warm
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
-        type: 3}
-      propertyPath: male
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
-        type: 3}
-      propertyPath: _clima
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
-        type: 3}
-      propertyPath: _genero
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57c25d4b5c9e28049b7fd9340662493b, type: 3}

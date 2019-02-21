@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 4387440}
   - component: {fileID: 4387439}
   m_Layer: 0
-  m_Name: Guia de viajes
+  m_Name: "Gu\xEDa de viajes"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2090,7 +2090,7 @@ GameObject:
   - component: {fileID: 470065459}
   - component: {fileID: 470065462}
   m_Layer: 9
-  m_Name: Pantalon largo
+  m_Name: "Pantal\xF3n largo"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2735,7 +2735,7 @@ GameObject:
   - component: {fileID: 589794913}
   - component: {fileID: 589794916}
   m_Layer: 9
-  m_Name: Chaqueta
+  m_Name: Abrigo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5389,7 +5389,7 @@ GameObject:
   - component: {fileID: 1072273050}
   - component: {fileID: 1072273053}
   m_Layer: 9
-  m_Name: Pijama invierno
+  m_Name: Pijama de invierno
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6102,7 +6102,7 @@ GameObject:
   - component: {fileID: 1280388303}
   - component: {fileID: 1280388306}
   m_Layer: 9
-  m_Name: Calcetines invierno
+  m_Name: Calcetines de invierno
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7314,6 +7314,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
+        type: 3}
+      propertyPath: warm
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
+        type: 3}
+      propertyPath: male
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
+        type: 3}
+      propertyPath: _clima
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
+        type: 3}
+      propertyPath: _genero
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4436745271860646, guid: 57c25d4b5c9e28049b7fd9340662493b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 226.72217
@@ -7345,26 +7365,6 @@ PrefabInstance:
     - target: {fileID: 4436745271860646, guid: 57c25d4b5c9e28049b7fd9340662493b, type: 3}
       propertyPath: m_RootOrder
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
-        type: 3}
-      propertyPath: warm
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
-        type: 3}
-      propertyPath: male
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
-        type: 3}
-      propertyPath: _clima
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
-        type: 3}
-      propertyPath: _genero
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57c25d4b5c9e28049b7fd9340662493b, type: 3}
@@ -8406,7 +8406,7 @@ GameObject:
   - component: {fileID: 1745481126}
   - component: {fileID: 1745481129}
   m_Layer: 9
-  m_Name: Cinturon
+  m_Name: "Cintur\xF3n"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8541,7 +8541,7 @@ GameObject:
   - component: {fileID: 1747376391}
   - component: {fileID: 1747376390}
   m_Layer: 0
-  m_Name: Calcetines invierno
+  m_Name: Calcetines de invierno
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8955,7 +8955,7 @@ GameObject:
   - component: {fileID: 1809637778}
   - component: {fileID: 1809637777}
   m_Layer: 0
-  m_Name: Pijama invierno
+  m_Name: Pijama de invierno
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9076,7 +9076,7 @@ GameObject:
   - component: {fileID: 1810062415}
   - component: {fileID: 1810062418}
   m_Layer: 9
-  m_Name: camiseta verde
+  m_Name: Camiseta verde
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9471,7 +9471,7 @@ GameObject:
   - component: {fileID: 1844746186}
   - component: {fileID: 1844746189}
   m_Layer: 9
-  m_Name: Pantalon corto
+  m_Name: "Pantal\xF3n corto"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9982,7 +9982,7 @@ GameObject:
   - component: {fileID: 1915681744}
   - component: {fileID: 1915681747}
   m_Layer: 9
-  m_Name: Guia viajes
+  m_Name: "Gu\xEDa de viajes"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10117,7 +10117,7 @@ GameObject:
   - component: {fileID: 1931400133}
   - component: {fileID: 1931400132}
   m_Layer: 0
-  m_Name: Pantalon corto
+  m_Name: "Pantal\xF3n corto"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10729,7 +10729,7 @@ GameObject:
   - component: {fileID: 2071408612}
   - component: {fileID: 2071408615}
   m_Layer: 9
-  m_Name: jersey
+  m_Name: Jersey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11105,7 +11105,7 @@ GameObject:
   - component: {fileID: 2130027989}
   - component: {fileID: 2130027992}
   m_Layer: 9
-  m_Name: Paracetamol
+  m_Name: Bote de medicinas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11240,7 +11240,7 @@ GameObject:
   - component: {fileID: 2143448526}
   - component: {fileID: 2143448525}
   m_Layer: 0
-  m_Name: Pantalon largo
+  m_Name: "Pantal\xF3n largo"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
