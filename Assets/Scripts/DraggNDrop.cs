@@ -1,6 +1,7 @@
 ﻿using RAGE.Analytics;
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 using static Assets.Scripts.Constantes;
 
 [RequireComponent(typeof(BoxCollider2D))]
