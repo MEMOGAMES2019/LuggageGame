@@ -19,10 +19,17 @@ namespace Assets.Scripts
 
         private void OnMouseEnter()
         {
-            PanelInfor.SetActive(true);
-            TextPanelInfo.text = name;
+            if (!Input.GetMouseButtonUp(0))
+            {
+                PanelInfor.SetActive(true);
+                TextPanelInfo.text = name;
+            }
         }
         private void OnMouseExit()
+        {
+            PanelInfor.SetActive(false);
+        }
+        private void OnMouseDrag()
         {
             PanelInfor.SetActive(false);
         }
