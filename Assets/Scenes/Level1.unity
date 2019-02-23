@@ -3326,7 +3326,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a6b6f63f19806c64388f04cfa567fd0c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1b64244965ef4b24b80a42d6ecb4821a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5954,8 +5954,8 @@ MonoBehaviour:
   firstAidKitCam: {fileID: 1120495588}
   buttonBathroom: {fileID: 2105305815}
   bttnBathroom:
-  - {fileID: 21300000, guid: 990ef6c67107d144699411d1ac45d831, type: 3}
-  - {fileID: 21300000, guid: ad248e80c2f866c4b809f0b82021dcca, type: 3}
+  - {fileID: 21300000, guid: a5ac991e7f6c0ce4084eed285ab1b294, type: 3}
+  - {fileID: 21300000, guid: 75892837b1f750d4ca49c0a90df66d3b, type: 3}
   buttonBackToRoom: {fileID: 105740550}
   bttnEnd: {fileID: 787741268}
   endPanel: {fileID: 2006516740}
@@ -7744,7 +7744,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 990ef6c67107d144699411d1ac45d831, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a5ac991e7f6c0ce4084eed285ab1b294, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
