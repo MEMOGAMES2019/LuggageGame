@@ -1,4 +1,5 @@
 ﻿using RAGE.Analytics;
+using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +15,10 @@ public class LevelManager : MonoBehaviour
     public Camera firstAidKitCam;
     public GameObject buttonBathroom;
     public Sprite[] bttnBathroom;
+    [SerializeField]
+    private List<Sprite> _tiposSuelos;
+    [SerializeField]
+    private GameObject _suelo;
     public GameObject buttonBackToRoom;
     public GameObject bttnEnd;
     public GameObject endPanel;
@@ -23,6 +28,9 @@ public class LevelManager : MonoBehaviour
     Vector3 initialLuggageScale;
     GameObject currentDrawer = null;
     State state;
+
+    public List<Sprite> TiposSuelos { get => _tiposSuelos; set => _tiposSuelos = value; }
+    public GameObject Suelo { get => _suelo; set => _suelo = value; }
 
     // 0 = Room & 1 = Bathroom
     int myActualRoom = 0;
@@ -53,6 +61,7 @@ public class LevelManager : MonoBehaviour
             buttonBackToRoom.SetActive(true);
 
             buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[1];
+            Suelo.GetComponent<SpriteRenderer>().sprite = TiposSuelos[1];
             Tracker.T.Accessible.Accessed("FirstAidKit", AccessibleTracker.Accessible.Screen);
         }
     }
@@ -69,10 +78,12 @@ public class LevelManager : MonoBehaviour
             if (myActualRoom == 0)
             {
                 buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[0];
+                Suelo.GetComponent<SpriteRenderer>().sprite = TiposSuelos[0];
             }
             else if (myActualRoom == 1)
             {
                 buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[1];
+                Suelo.GetComponent<SpriteRenderer>().sprite = TiposSuelos[1];
             }
             buttonBackToRoom.SetActive(true);
             drawerImage.SetActive(true);
@@ -83,8 +94,8 @@ public class LevelManager : MonoBehaviour
                 currentDrawer.SetActive(true);
                 luggage.transform.position = initialLuggagePos;
                 luggage.transform.localScale = initialLuggageScale;
-                Tracker.T.Accessible.Accessed(drawer.name, AccessibleTracker.Accessible.Screen);                
-            }           
+                Tracker.T.Accessible.Accessed(drawer.name, AccessibleTracker.Accessible.Screen);
+            }
         }
     }
 
@@ -108,7 +119,7 @@ public class LevelManager : MonoBehaviour
     {
         // boton salir de la maleta
         if (state != State.END)
-        {            
+        {
             if (myActualRoom == 0)
             {
                 state = State.ROOM;
@@ -136,6 +147,7 @@ public class LevelManager : MonoBehaviour
             bttnEnd.gameObject.SetActive(true);
             state = State.BATHROOM;
             buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[1];
+            Suelo.GetComponent<SpriteRenderer>().sprite = TiposSuelos[1];
             drawerCam.gameObject.SetActive(false);
             roomCam.gameObject.SetActive(false);
             bathroomCam.gameObject.SetActive(true);
@@ -153,6 +165,7 @@ public class LevelManager : MonoBehaviour
             Tracker.T.setVar("RoomButtom", 1);
             BackToRoom();
             buttonBathroom.GetComponent<Image>().sprite = bttnBathroom[0];
+            Suelo.GetComponent<SpriteRenderer>().sprite = TiposSuelos[0];
         }
         else
         {

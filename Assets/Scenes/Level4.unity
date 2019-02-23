@@ -5087,6 +5087,10 @@ MonoBehaviour:
   bttnBathroom:
   - {fileID: 21300000, guid: a5ac991e7f6c0ce4084eed285ab1b294, type: 3}
   - {fileID: 21300000, guid: 75892837b1f750d4ca49c0a90df66d3b, type: 3}
+  _tiposSuelos:
+  - {fileID: 21300000, guid: 329da639ff93b9a4990ee6f7336d4a01, type: 3}
+  - {fileID: 21300000, guid: 44eee5246bde19d4c96466aa57418653, type: 3}
+  _suelo: {fileID: 1659735429}
   buttonBackToRoom: {fileID: 919479596}
   bttnEnd: {fileID: 626397043}
   endPanel: {fileID: 2031943904}
