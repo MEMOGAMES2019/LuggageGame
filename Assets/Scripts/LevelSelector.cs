@@ -217,7 +217,7 @@ public class LevelSelector : MonoBehaviour
         GM.Gm.List = new List<string>();
 
         TextAsset list = (TextAsset)Resources.Load(string.Concat("Lists/", name), typeof(TextAsset));
-        string txt = Encoding.UTF7.GetString(list.bytes);
+        string txt = Encoding.UTF8.GetString(list.bytes);
         Queue<string> cola = new Queue<string>(txt.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries));
         cola.Dequeue();
         if (LevelNameGlobal != "Level4Global")
