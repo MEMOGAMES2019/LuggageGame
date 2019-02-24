@@ -1081,10 +1081,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 206321465}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 2014704333}
+  _panelInfo: {fileID: 2014704333}
 --- !u!1 &223300676
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,7 +1181,7 @@ GameObject:
   - component: {fileID: 224520367}
   - component: {fileID: 224520370}
   m_Layer: 9
-  m_Name: Camisa amarilla
+  m_Name: Camiseta amarilla
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1299,10 +1299,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 224520365}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 2014704333}
+  _panelInfo: {fileID: 2014704333}
 --- !u!1 &230190988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1435,10 +1435,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 230190988}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 2014704333}
+  _panelInfo: {fileID: 2014704333}
 --- !u!1 &273522580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1770,10 +1770,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 360755013}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 2014704333}
+  _panelInfo: {fileID: 2014704333}
 --- !u!1 &436914048
 GameObject:
   m_ObjectHideFlags: 0
@@ -1912,7 +1912,7 @@ GameObject:
   - component: {fileID: 444980358}
   - component: {fileID: 444980361}
   m_Layer: 9
-  m_Name: Blusa
+  m_Name: Blusa verde
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2030,10 +2030,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 444980356}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 2014704333}
+  _panelInfo: {fileID: 2014704333}
 --- !u!1 &491961007
 GameObject:
   m_ObjectHideFlags: 0
@@ -2196,10 +2196,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 493926939}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 2014704333}
+  _panelInfo: {fileID: 2014704333}
 --- !u!1 &494250222
 GameObject:
   m_ObjectHideFlags: 0
@@ -2506,10 +2506,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 594773572}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 2014704333}
+  _panelInfo: {fileID: 2014704333}
 --- !u!1 &611648553
 GameObject:
   m_ObjectHideFlags: 0
@@ -2524,7 +2524,7 @@ GameObject:
   - component: {fileID: 611648555}
   - component: {fileID: 611648558}
   m_Layer: 9
-  m_Name: Pantalon
+  m_Name: "Pantal\xF3n"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2642,10 +2642,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 611648553}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 2014704333}
+  _panelInfo: {fileID: 2014704333}
 --- !u!1 &642318479
 GameObject:
   m_ObjectHideFlags: 0
@@ -2898,10 +2898,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 717331983}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 2014704333}
+  _panelInfo: {fileID: 2014704333}
 --- !u!1 &725765023
 GameObject:
   m_ObjectHideFlags: 0
@@ -3735,10 +3735,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 975955080}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 2014704333}
+  _panelInfo: {fileID: 2014704333}
 --- !u!1 &980354219
 GameObject:
   m_ObjectHideFlags: 0
@@ -5051,10 +5051,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1423353871}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 2014704333}
+  _panelInfo: {fileID: 2014704333}
 --- !u!1 &1474190760
 GameObject:
   m_ObjectHideFlags: 0
@@ -5405,7 +5405,7 @@ GameObject:
   - component: {fileID: 1641042391}
   - component: {fileID: 1641042390}
   m_Layer: 0
-  m_Name: CamisaHawaiana
+  m_Name: Camisa hawaiana
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5644,10 +5644,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1682657492}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 2014704333}
+  _panelInfo: {fileID: 2014704333}
 --- !u!1 &1728499187
 GameObject:
   m_ObjectHideFlags: 0
@@ -5809,13 +5809,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1728499187}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.36, y: -3.82, z: -4}
+  m_LocalRotation: {x: -0, y: 0.9974414, z: -0, w: 0.071488805}
+  m_LocalPosition: {x: 23, y: -3.42, z: -6.3}
   m_LocalScale: {x: -2.777461, y: 2.7774606, z: 2.7774606}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 171.80101, z: 0}
 --- !u!1 &1760340417
 GameObject:
   m_ObjectHideFlags: 0
@@ -5955,7 +5955,11 @@ MonoBehaviour:
   buttonBathroom: {fileID: 2105305815}
   bttnBathroom:
   - {fileID: 21300000, guid: 990ef6c67107d144699411d1ac45d831, type: 3}
-  - {fileID: 21300000, guid: ad248e80c2f866c4b809f0b82021dcca, type: 3}
+  - {fileID: 21300000, guid: 75892837b1f750d4ca49c0a90df66d3b, type: 3}
+  _tiposSuelos:
+  - {fileID: 21300000, guid: 329da639ff93b9a4990ee6f7336d4a01, type: 3}
+  - {fileID: 21300000, guid: 44eee5246bde19d4c96466aa57418653, type: 3}
+  _suelo: {fileID: 2101395793}
   buttonBackToRoom: {fileID: 105740550}
   bttnEnd: {fileID: 787741268}
   endPanel: {fileID: 2006516740}
@@ -6919,7 +6923,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998914191}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.2, y: 20.1, z: -4}
+  m_LocalPosition: {x: 42, y: 20.1, z: -4}
   m_LocalScale: {x: -2.777461, y: 2.7774606, z: 2.7774606}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7241,7 +7245,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -270, y: -0.0000076294}
+  m_AnchoredPosition: {x: -270, y: -0}
   m_SizeDelta: {x: 432.5, y: 130.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2041104703

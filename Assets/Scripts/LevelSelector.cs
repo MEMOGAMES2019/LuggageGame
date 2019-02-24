@@ -6,6 +6,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static Assets.Scripts.Constantes;
+// para leer de txt
+using System.IO;
+using System.Linq;
 
 public class LevelSelector : MonoBehaviour
 {
@@ -145,16 +148,22 @@ public class LevelSelector : MonoBehaviour
                 case 3:
                     LevelNameGlobal = "Level3";
                     break;
+                case 4:
+                    LevelNameGlobal = "Level4Global";
+                    break;
             }
 
-            switch (GM.Gm.Clima)
+            if (LevelNameGlobal != "Level4Global")
             {
-                case Clima.CALIDO:
-                    LevelNameGlobal = string.Concat(LevelNameGlobal, "Warm");
-                    break;
-                case Clima.FRIO:
-                    LevelNameGlobal = string.Concat(LevelNameGlobal, "Cold");
-                    break;
+                switch (GM.Gm.Clima)
+                {
+                    case Clima.CALIDO:
+                        LevelNameGlobal = string.Concat(LevelNameGlobal, "Warm");
+                        break;
+                    case Clima.FRIO:
+                        LevelNameGlobal = string.Concat(LevelNameGlobal, "Cold");
+                        break;
+                }
             }
             LoadList(LevelNameGlobal);
         }
@@ -202,16 +211,58 @@ public class LevelSelector : MonoBehaviour
     /// <param name="name">Nombre del fichero donde se van a carar los datos.</param>
     private void LoadList(string name)
     {
+
         TextList.text = string.Concat("Tienes que meter estos objetos en la maleta:", Environment.NewLine);
         GM.Gm.List = new List<string>();
 
         TextAsset list = (TextAsset)Resources.Load(string.Concat("Lists/", name), typeof(TextAsset));
-        Queue<string> cola = new Queue<string>(list.text.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries));
+        string txt = Encoding.UTF8.GetString(list.bytes);
+        Queue<string> cola = new Queue<string>(txt.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries));
         cola.Dequeue();
+        if (LevelNameGlobal != "Level4Global")
+        {
 
-        GetPrendas(cola, Genero.HOMBRE, "F");
-        GetPrendas(cola, Genero.MUJER, "N");
-        GetPrendas(cola, Genero.NEUTRAL, "Fin");
+            GetPrendas(cola, Genero.HOMBRE, "F");
+            GetPrendas(cola, Genero.MUJER, "N");
+            GetPrendas(cola, Genero.NEUTRAL, "Fin");
+        }
+        // Level 4
+        else
+        {
+            string listObjetos = LoadListLevel4(cola, GM.Gm.List, "Ropa para obstaculizar");
+
+            TextList.text = string.Concat(TextList.text, listObjetos);
+            string listObstaculos = LoadListLevel4(cola, GM.Gm.ObstaculosList, null);
+
+        }
+    }
+
+    /// <summary>
+    /// Busca en el txt los objetos que el usuario debe guardar en la maleta
+    /// </summary>
+    private string LoadListLevel4(Queue<string> cola, List<string> list, string fin)
+    {
+        string line;
+        StringBuilder finalList = new StringBuilder();
+        bool vacio = false;
+
+        // Tramo de la ropa que el usuario debe buscar
+        line = cola.Dequeue();
+        while ((fin != null && !line.Equals(fin)) || (fin == null && !vacio))
+        {
+            List<string> entries = line.Split(',').Select(x => x.Trim()).Where(x => !string.IsNullOrWhiteSpace(x)).ToList();
+            entries.ForEach(objeto =>
+            {
+                list.Add(objeto);
+                finalList.AppendLine(string.Concat("- ", objeto));
+            });
+
+            if (cola.Count > 0)
+                line = cola.Dequeue();
+            else
+                vacio = true;
+        }
+        return finalList.ToString();
     }
 
     /// <summary>

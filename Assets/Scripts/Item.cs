@@ -71,6 +71,7 @@ public class Item : MonoBehaviour
         Vector3 newPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 5);
         transform.position = Camera.main.ScreenToWorldPoint(newPosition) + Offset;
         transform.position = new Vector3(transform.position.x, transform.position.y, -5);
+        panelInfo.SetActive(false);
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -81,5 +82,6 @@ public class Item : MonoBehaviour
         }
 
         hasExit = true;
+
     }
 }

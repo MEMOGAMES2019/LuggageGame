@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 4387440}
   - component: {fileID: 4387439}
   m_Layer: 0
-  m_Name: Guia de viajes
+  m_Name: "Gu\xEDa de viajes"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -394,10 +394,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 63869537}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &79481263
 GameObject:
   m_ObjectHideFlags: 0
@@ -1533,7 +1533,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 203013109}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 44.2, y: 20.1, z: -4}
+  m_LocalPosition: {x: 42, y: 20.1, z: -4}
   m_LocalScale: {x: -2.777461, y: 2.7774606, z: 2.7774606}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1944,10 +1944,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 435608624}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &440065894
 GameObject:
   m_ObjectHideFlags: 0
@@ -2090,7 +2090,7 @@ GameObject:
   - component: {fileID: 470065459}
   - component: {fileID: 470065462}
   m_Layer: 9
-  m_Name: Pantalon largo
+  m_Name: "Pantal\xF3n largo"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2208,10 +2208,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 470065457}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &472606198
 GameObject:
   m_ObjectHideFlags: 0
@@ -2735,7 +2735,7 @@ GameObject:
   - component: {fileID: 589794913}
   - component: {fileID: 589794916}
   m_Layer: 9
-  m_Name: Chaqueta
+  m_Name: Abrigo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2853,10 +2853,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 589794911}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &602900633
 GameObject:
   m_ObjectHideFlags: 0
@@ -3831,10 +3831,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 707387216}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &759676652
 GameObject:
   m_ObjectHideFlags: 0
@@ -3967,10 +3967,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 759676652}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &808814812
 GameObject:
   m_ObjectHideFlags: 0
@@ -4374,10 +4374,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 865137552}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &885962364
 GameObject:
   m_ObjectHideFlags: 0
@@ -4763,10 +4763,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 892106446}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &947174584
 GameObject:
   m_ObjectHideFlags: 0
@@ -5203,7 +5203,11 @@ MonoBehaviour:
   buttonBathroom: {fileID: 1861483291}
   bttnBathroom:
   - {fileID: 21300000, guid: 990ef6c67107d144699411d1ac45d831, type: 3}
-  - {fileID: 21300000, guid: ad248e80c2f866c4b809f0b82021dcca, type: 3}
+  - {fileID: 21300000, guid: 75892837b1f750d4ca49c0a90df66d3b, type: 3}
+  _tiposSuelos:
+  - {fileID: 21300000, guid: 329da639ff93b9a4990ee6f7336d4a01, type: 3}
+  - {fileID: 21300000, guid: 44eee5246bde19d4c96466aa57418653, type: 3}
+  _suelo: {fileID: 1681321340}
   buttonBackToRoom: {fileID: 1031646405}
   bttnEnd: {fileID: 111311489}
   endPanel: {fileID: 2076945370}
@@ -5389,7 +5393,7 @@ GameObject:
   - component: {fileID: 1072273050}
   - component: {fileID: 1072273053}
   m_Layer: 9
-  m_Name: Pijama invierno
+  m_Name: Pijama de invierno
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5507,10 +5511,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1072273048}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &1078827460
 GameObject:
   m_ObjectHideFlags: 0
@@ -6102,7 +6106,7 @@ GameObject:
   - component: {fileID: 1280388303}
   - component: {fileID: 1280388306}
   m_Layer: 9
-  m_Name: Calcetines invierno
+  m_Name: Calcetines de invierno
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6220,10 +6224,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1280388301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &1288569439
 GameObject:
   m_ObjectHideFlags: 0
@@ -6832,10 +6836,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1383318938}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &1422883808
 GameObject:
   m_ObjectHideFlags: 0
@@ -6968,10 +6972,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1422883808}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &1506604437
 GameObject:
   m_ObjectHideFlags: 0
@@ -7104,10 +7108,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1506604437}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &1567594485
 GameObject:
   m_ObjectHideFlags: 0
@@ -7314,6 +7318,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
+        type: 3}
+      propertyPath: warm
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
+        type: 3}
+      propertyPath: male
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
+        type: 3}
+      propertyPath: _clima
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
+        type: 3}
+      propertyPath: _genero
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4436745271860646, guid: 57c25d4b5c9e28049b7fd9340662493b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 226.72217
@@ -7345,26 +7369,6 @@ PrefabInstance:
     - target: {fileID: 4436745271860646, guid: 57c25d4b5c9e28049b7fd9340662493b, type: 3}
       propertyPath: m_RootOrder
       value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
-        type: 3}
-      propertyPath: warm
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
-        type: 3}
-      propertyPath: male
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
-        type: 3}
-      propertyPath: _clima
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114562415702098292, guid: 57c25d4b5c9e28049b7fd9340662493b,
-        type: 3}
-      propertyPath: _genero
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57c25d4b5c9e28049b7fd9340662493b, type: 3}
@@ -7661,10 +7665,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1611877298}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &1664628338
 GameObject:
   m_ObjectHideFlags: 0
@@ -8116,10 +8120,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1687438867}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &1721896958
 GameObject:
   m_ObjectHideFlags: 0
@@ -8252,10 +8256,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1721896958}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &1728769078
 GameObject:
   m_ObjectHideFlags: 0
@@ -8388,10 +8392,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1728769078}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &1745481124
 GameObject:
   m_ObjectHideFlags: 0
@@ -8406,7 +8410,7 @@ GameObject:
   - component: {fileID: 1745481126}
   - component: {fileID: 1745481129}
   m_Layer: 9
-  m_Name: Cinturon
+  m_Name: "Cintur\xF3n"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8524,10 +8528,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1745481124}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &1747376389
 GameObject:
   m_ObjectHideFlags: 0
@@ -8541,7 +8545,7 @@ GameObject:
   - component: {fileID: 1747376391}
   - component: {fileID: 1747376390}
   m_Layer: 0
-  m_Name: Calcetines invierno
+  m_Name: Calcetines de invierno
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8938,10 +8942,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1766174595}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &1809637776
 GameObject:
   m_ObjectHideFlags: 0
@@ -8955,7 +8959,7 @@ GameObject:
   - component: {fileID: 1809637778}
   - component: {fileID: 1809637777}
   m_Layer: 0
-  m_Name: Pijama invierno
+  m_Name: Pijama de invierno
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9076,7 +9080,7 @@ GameObject:
   - component: {fileID: 1810062415}
   - component: {fileID: 1810062418}
   m_Layer: 9
-  m_Name: camiseta verde
+  m_Name: Camiseta verde
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9194,10 +9198,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1810062413}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &1823221281
 GameObject:
   m_ObjectHideFlags: 0
@@ -9471,7 +9475,7 @@ GameObject:
   - component: {fileID: 1844746186}
   - component: {fileID: 1844746189}
   m_Layer: 9
-  m_Name: Pantalon corto
+  m_Name: "Pantal\xF3n corto"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9589,10 +9593,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1844746184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &1859704353
 GameObject:
   m_ObjectHideFlags: 0
@@ -9754,13 +9758,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1859704353}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 39.36, y: -3.82, z: -4}
+  m_LocalRotation: {x: -0, y: 0.9974414, z: -0, w: 0.071488805}
+  m_LocalPosition: {x: 23, y: -3.42, z: -6.3}
   m_LocalScale: {x: -2.777461, y: 2.7774606, z: 2.7774606}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 171.80101, z: 0}
 --- !u!1 &1861483291
 GameObject:
   m_ObjectHideFlags: 0
@@ -9982,7 +9986,7 @@ GameObject:
   - component: {fileID: 1915681744}
   - component: {fileID: 1915681747}
   m_Layer: 9
-  m_Name: Guia viajes
+  m_Name: "Gu\xEDa de viajes"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10100,10 +10104,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1915681742}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &1931400130
 GameObject:
   m_ObjectHideFlags: 0
@@ -10117,7 +10121,7 @@ GameObject:
   - component: {fileID: 1931400133}
   - component: {fileID: 1931400132}
   m_Layer: 0
-  m_Name: Pantalon corto
+  m_Name: "Pantal\xF3n corto"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10356,10 +10360,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1945834283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &1966661970
 GameObject:
   m_ObjectHideFlags: 0
@@ -10729,7 +10733,7 @@ GameObject:
   - component: {fileID: 2071408612}
   - component: {fileID: 2071408615}
   m_Layer: 9
-  m_Name: jersey
+  m_Name: Jersey
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10847,10 +10851,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2071408610}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &2076945370
 GameObject:
   m_ObjectHideFlags: 0
@@ -11105,7 +11109,7 @@ GameObject:
   - component: {fileID: 2130027989}
   - component: {fileID: 2130027992}
   m_Layer: 9
-  m_Name: Paracetamol
+  m_Name: Bote de medicinas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11223,10 +11227,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2130027987}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f8b813eae7d8d5440b37ec146a9fb771, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  panelInfo: {fileID: 511946576}
+  _panelInfo: {fileID: 511946576}
 --- !u!1 &2143448523
 GameObject:
   m_ObjectHideFlags: 0
@@ -11240,7 +11244,7 @@ GameObject:
   - component: {fileID: 2143448526}
   - component: {fileID: 2143448525}
   m_Layer: 0
-  m_Name: Pantalon largo
+  m_Name: "Pantal\xF3n largo"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -119,7 +119,7 @@ public class Luggage : MonoBehaviour
                 objetosNoGuardados.Add(objeto);
             }
         });
-        if (objetosNoGuardados.Count == 0) return "Chachi";
+        if (objetosNoGuardados.Count == 0) return ("Felicidades\n Nivel superado con éxito");
 
         StringBuilder cad = new StringBuilder();
         cad.AppendLine("Te has dejado estos objetos:");

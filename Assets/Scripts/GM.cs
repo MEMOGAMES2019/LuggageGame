@@ -27,6 +27,8 @@ public class GM : MonoBehaviour
     /// </summary>
     public static GM Gm { get; set; }
 
+    public List<string> ObstaculosList { get; set; }
+
     /// <summary>
     /// Clima del juego.
     /// </summary>
@@ -89,6 +91,7 @@ public class GM : MonoBehaviour
             Destroy(gameObject);
         }
         List = new List<string>();
+        ObstaculosList = new List<string>();
     }
 
     private void Start()
@@ -103,6 +106,14 @@ public class GM : MonoBehaviour
     public void LoadScene(string scene)
     {
         SceneManager.LoadScene(scene);
+    }
+
+    /**
+     * Método para el botón salir del menú
+     */
+    public void DoExitGame()
+    {
+        Application.Quit();
     }
 
     #endregion
