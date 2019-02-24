@@ -211,7 +211,6 @@ public class LevelSelector : MonoBehaviour
     /// <param name="name">Nombre del fichero donde se van a carar los datos.</param>
     private void LoadList(string name)
     {
-        Debug.Log("############## " + LevelNameGlobal);
 
         TextList.text = string.Concat("Tienes que meter estos objetos en la maleta:", Environment.NewLine);
         GM.Gm.List = new List<string>();
@@ -222,9 +221,6 @@ public class LevelSelector : MonoBehaviour
         cola.Dequeue();
         if (LevelNameGlobal != "Level4Global")
         {
-            Debug.Log("############## 1");
-
-
 
             GetPrendas(cola, Genero.HOMBRE, "F");
             GetPrendas(cola, Genero.MUJER, "N");
@@ -233,12 +229,11 @@ public class LevelSelector : MonoBehaviour
         // Level 4
         else
         {
-            Debug.Log("############## 2");
             string listObjetos = LoadListLevel4(cola, GM.Gm.List, "Ropa para obstaculizar");
-            Debug.Log(listObjetos);
+
             TextList.text = string.Concat(TextList.text, listObjetos);
             string listObstaculos = LoadListLevel4(cola, GM.Gm.ObstaculosList, null);
-            Debug.Log(listObstaculos);
+
         }
     }
 
@@ -258,7 +253,6 @@ public class LevelSelector : MonoBehaviour
             List<string> entries = line.Split(',').Select(x => x.Trim()).Where(x => !string.IsNullOrWhiteSpace(x)).ToList();
             entries.ForEach(objeto =>
             {
-                Debug.Log("############## - " + objeto);
                 list.Add(objeto);
                 finalList.AppendLine(string.Concat("- ", objeto));
             });

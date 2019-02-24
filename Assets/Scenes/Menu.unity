@@ -160,7 +160,6 @@ GameObject:
   - component: {fileID: 187503577}
   - component: {fileID: 187503580}
   - component: {fileID: 187503579}
-  - component: {fileID: 187503578}
   - component: {fileID: 187503581}
   m_Layer: 5
   m_Name: BotonSalir
@@ -178,34 +177,16 @@ RectTransform:
   m_GameObject: {fileID: 187503576}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.395, y: 1.4375073, z: 0.51811594}
+  m_LocalScale: {x: 2.3922787, y: 2.1671858, z: 0.78111154}
   m_Children: []
   m_Father: {fileID: 1506870263}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 356, y: 149}
-  m_SizeDelta: {x: -500, y: -266.57553}
+  m_AnchorMin: {x: 0.87625015, y: 0.7714331}
+  m_AnchorMax: {x: 0.97875005, y: 1}
+  m_AnchoredPosition: {x: -2, y: 1.5}
+  m_SizeDelta: {x: -48.599976, y: -46.200012}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &187503578
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187503576}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a86ff5b0b11f3c24bb29549974b31211, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _climaButtons: {fileID: 388684021}
-  _generoButtons: {fileID: 178665519}
-  _nivelButtons: {fileID: 701909643}
-  _panelList: {fileID: 1623888771}
-  _tutorialButton: {fileID: 217132221}
-  _pregunta: {fileID: 339336589}
 --- !u!114 &187503579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1928,7 +1909,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1501656035}
   - component: {fileID: 1501656034}
-  - component: {fileID: 1501656036}
   m_Layer: 0
   m_Name: Tracker
   m_TagString: Untagged
@@ -1945,9 +1925,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1501656033}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a445286b103f694da1406ec87108966, type: 3}
+  m_Script: {fileID: 11500000, guid: 0af7c467730fcd742bdfe3c5b661fbf5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rawCopy: 0
+  flushInterval: 3
+  checkInterval: 3
+  storageType: net
+  traceFormat: xapi
+  host: https://analytics.e-ucm.es/
+  trackingCode: 
+  debug: 0
+  username: 
+  password: 
 --- !u!4 &1501656035
 Transform:
   m_ObjectHideFlags: 0
@@ -1962,28 +1952,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1501656036
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1501656033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e799d7db474533f47b87952b8592ea4b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rawCopy: 0
-  flushInterval: 3
-  checkInterval: 3
-  storageType: net
-  traceFormat: xapi
-  host: https://analytics.e-ucm.es/
-  trackingCode: 
-  debug: 0
-  username: 
-  password: 
 --- !u!1 &1506870259
 GameObject:
   m_ObjectHideFlags: 0

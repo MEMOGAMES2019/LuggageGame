@@ -3606,7 +3606,7 @@ MonoBehaviour:
   firstAidKitCam: {fileID: 565107722}
   buttonBathroom: {fileID: 2024897355}
   bttnBathroom:
-  - {fileID: 21300000, guid: a5ac991e7f6c0ce4084eed285ab1b294, type: 3}
+  - {fileID: 21300000, guid: 990ef6c67107d144699411d1ac45d831, type: 3}
   - {fileID: 21300000, guid: 75892837b1f750d4ca49c0a90df66d3b, type: 3}
   _tiposSuelos:
   - {fileID: 21300000, guid: 329da639ff93b9a4990ee6f7336d4a01, type: 3}
@@ -3944,7 +3944,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 1b64244965ef4b24b80a42d6ecb4821a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a6b6f63f19806c64388f04cfa567fd0c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8328,13 +8328,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1729250179}
-  m_LocalRotation: {x: 0.0003399508, y: 0.9989492, z: -0.0017449177, w: -0.045796044}
-  m_LocalPosition: {x: 23, y: -4.5, z: -3.79}
+  m_LocalRotation: {x: -0, y: 0.9974414, z: -0, w: 0.071488805}
+  m_LocalPosition: {x: 23, y: -3.42, z: -6.3}
   m_LocalScale: {x: -2.777461, y: 2.7774606, z: 2.7774606}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0.19800001, y: 185.24998, z: 0.048}
+  m_LocalEulerAnglesHint: {x: 0, y: 171.80101, z: 0}
 --- !u!1 &1736226603
 GameObject:
   m_ObjectHideFlags: 0
@@ -9888,7 +9888,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: a5ac991e7f6c0ce4084eed285ab1b294, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 990ef6c67107d144699411d1ac45d831, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

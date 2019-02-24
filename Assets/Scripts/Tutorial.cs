@@ -78,7 +78,7 @@ public class Tutorial : MonoBehaviour
                 if (camisetaAmarilla.activeSelf)
                 {
                     state = State.BACKTOROOM;
-                    texto.text = "Haz click aquí para volver a la habitación";
+                    texto.text = "Haz click aquí para cerrar la maleta y volver atrás.";
                     manoAnimator.SetInteger("step", 4);
                 }
             }
