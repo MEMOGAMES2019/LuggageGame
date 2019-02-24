@@ -214,9 +214,33 @@ public class LevelSelector : MonoBehaviour
 
         TextList.text = string.Concat("Tienes que meter estos objetos en la maleta:", Environment.NewLine);
         GM.Gm.List = new List<string>();
+        TextAsset list;
+        string txt =" ";
+        if (LevelNameGlobal != "Level4Global")
+        {
+            list = (TextAsset)Resources.Load(string.Concat("Lists/", name), typeof(TextAsset));
+            txt= Encoding.UTF8.GetString(list.bytes);
+        }
+        else
+        {
+           // list = (TextAsset)new System.IO.StreamReader(@".\configFile15O.txt");
+            string path = @".\configFileLuggage.txt";
+            FileStream fs;
+            if (!File.Exists(path))
+            {
+                list = (TextAsset)Resources.Load(string.Concat("Lists/", name), typeof(TextAsset));
+                txt = Encoding.UTF8.GetString(list.bytes);
+            }
+            else
+            {
+                System.IO.StreamReader file = new System.IO.StreamReader(path);
+                txt = file.ReadToEnd();
+                file.Close();
+            }
 
-        TextAsset list = (TextAsset)Resources.Load(string.Concat("Lists/", name), typeof(TextAsset));
-        string txt = Encoding.UTF8.GetString(list.bytes);
+        }
+
+       
         Queue<string> cola = new Queue<string>(txt.Split(new[] { "\r\n", "\r", "\n" }, StringSplitOptions.RemoveEmptyEntries));
         cola.Dequeue();
         if (LevelNameGlobal != "Level4Global")
