@@ -119,10 +119,10 @@ public class Luggage : MonoBehaviour
                 objetosNoGuardados.Add(objeto);
             }
         });
-        if (objetosNoGuardados.Count == 0) return ("Felicidades\n Nivel superado con éxito");
+        if (objetosNoGuardados.Count == 0) return ("Felicidades\n ¡Has superado el nivel con éxito!");
 
         StringBuilder cad = new StringBuilder();
-        cad.AppendLine("Te has dejado estos objetos:");
+        cad.AppendLine("Ups... Te has olvidado de estos objetos:");
 
         objetosNoGuardados.ForEach(objeto => cad.AppendLine(string.Concat("- ", objeto)));
 
@@ -137,7 +137,7 @@ public class Luggage : MonoBehaviour
     {
         if (ObjetosErroneosGuardados.Count == 0) return string.Empty;
         StringBuilder cad = new StringBuilder();
-        cad.AppendLine("Has metido estos objetos que no tenías que meter:");
+        cad.AppendLine("Ouch... Has metido estos objetos que no tenías que meter:");
 
         ObjetosErroneosGuardados.ForEach(objeto => cad.AppendLine(string.Concat("- ", objeto)));
 

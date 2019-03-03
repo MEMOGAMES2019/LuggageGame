@@ -88,7 +88,7 @@ public class LevelSelector : MonoBehaviour
         ClimaButtons.SetActive(true);
         TutorialButton.SetActive(true);
         TextList = PanelList.GetComponentInChildren<Text>();
-        PreguntaText.text = "¿En qué clima quieres jugar?";
+        PreguntaText.text = "Imagínese que está preparando un viaje y que el destino elegido es…";
     }
 
     #endregion
@@ -104,7 +104,7 @@ public class LevelSelector : MonoBehaviour
         GM.Gm.Genero = (Genero)g;
         GeneroButtons.SetActive(false);
         NivelButtons.SetActive(true);
-        PreguntaText.text = "¿En qué nivel de dificultad quieres jugar?";
+        PreguntaText.text = "Ahora parece que la cosa va sobre la dificultad del juego... ¿Cuál prefieres?";
     }
 
     /// <summary>
@@ -116,7 +116,7 @@ public class LevelSelector : MonoBehaviour
         GM.Gm.Clima = (Clima)w;
         ClimaButtons.SetActive(false);
         GeneroButtons.SetActive(true);
-        PreguntaText.text = "¿Con qué género quieres jugar?";
+        PreguntaText.text = "Recuérdame... ¿Eres un hombre o una mujer?";
     }
 
     /// <summary>
@@ -179,8 +179,8 @@ public class LevelSelector : MonoBehaviour
                 "Cepillo de dientes"
             };
             StringBuilder cad = new StringBuilder();
-            cad.AppendLine("Deberás identificar los siguientes objetos y guardarlos en la maleta.");
-            cad.AppendLine("Memorízalos y haz click en el botón play cuando estés listo");
+            cad.AppendLine("Lea atentamente e intente memorizar los siguientes objetos que debe introducir en la maleta...");
+            cad.AppendLine("Cuando se sienta preparado haz click en el botón play");
             cad.AppendLine();
             cad.AppendLine("- Camiseta amarilla");
             cad.AppendLine("- Deportivas");
@@ -212,7 +212,7 @@ public class LevelSelector : MonoBehaviour
     private void LoadList(string name)
     {
 
-        TextList.text = string.Concat("Tienes que meter estos objetos en la maleta:", Environment.NewLine);
+        TextList.text = string.Concat("Lea atentamente e intente memorizar los siguientes objetos que debe introducir en la maleta...", Environment.NewLine);
         GM.Gm.List = new List<string>();
 
         TextAsset list = (TextAsset)Resources.Load(string.Concat("Lists/", name), typeof(TextAsset));
