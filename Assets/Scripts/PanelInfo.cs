@@ -25,7 +25,7 @@ namespace Assets.Scripts
             {
                 Debug.Log("Posiciones del objeto: " + Input.mousePosition.x + " , " + Input.mousePosition.y + " , " + OFFSET_Z);
                 PanelInfor.SetActive(true);         
-                PanelInfor.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y, OFFSET_Z);
+                PanelInfor.transform.position = new Vector3(Input.mousePosition.x, Input.mousePosition.y+50, OFFSET_Z);
                 TextPanelInfo.text = name;
             }
         }
