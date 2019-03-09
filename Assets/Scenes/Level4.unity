@@ -9901,7 +9901,7 @@ GameObject:
   - component: {fileID: 1091325353}
   - component: {fileID: 1091325352}
   m_Layer: 9
-  m_Name: Zapatillas
+  m_Name: Deportivas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16041,7 +16041,7 @@ GameObject:
   - component: {fileID: 2092280226}
   - component: {fileID: 2092280225}
   m_Layer: 0
-  m_Name: Zapatillas
+  m_Name: Deportivas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
