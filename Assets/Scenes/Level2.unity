@@ -2576,7 +2576,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _panelInfo: {fileID: 0}
+  _panelInfo: {fileID: 306155284}
 --- !u!114 &439792373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2589,7 +2589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objetoMaleta: {fileID: 0}
+  _objetoMaleta: {fileID: 1736220173}
   _clima: 0
   _genero: 0
 --- !u!61 &439792374
@@ -5584,7 +5584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _panelInfo: {fileID: 0}
+  _panelInfo: {fileID: 306155284}
 --- !u!114 &930942171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5597,7 +5597,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objetoMaleta: {fileID: 0}
+  _objetoMaleta: {fileID: 1662894890}
   _clima: 0
   _genero: 0
 --- !u!61 &930942172
@@ -6619,7 +6619,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _panelInfo: {fileID: 0}
+  _panelInfo: {fileID: 306155284}
 --- !u!114 &1052914058
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6632,7 +6632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objetoMaleta: {fileID: 0}
+  _objetoMaleta: {fileID: 1138494240}
   _clima: 1
   _genero: 0
 --- !u!61 &1052914059
@@ -6755,7 +6755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d90d1af1af65644db772a94b70093f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _panelInfo: {fileID: 0}
+  _panelInfo: {fileID: 306155284}
 --- !u!114 &1068326018
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6768,7 +6768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d28edca438bb0034dbd2e4399c4c9892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objetoMaleta: {fileID: 0}
+  _objetoMaleta: {fileID: 26342565}
   _clima: 0
   _genero: 2
 --- !u!61 &1068326019
@@ -7107,7 +7107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1138494239
 Transform:
   m_ObjectHideFlags: 0
