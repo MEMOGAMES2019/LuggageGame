@@ -201,6 +201,10 @@ public class LevelSelector : MonoBehaviour
         SceneManager.LoadScene(levelPlay);
     }
 
+    public void Credits()
+    {
+        SceneManager.LoadScene("Créditos");
+    }
     #endregion
 
     #region Métodos privados
@@ -288,6 +292,7 @@ public class LevelSelector : MonoBehaviour
         TextList.text = string.Concat(TextList.text, finalList.ToString());
     }
 
+    
     #endregion
 
 }

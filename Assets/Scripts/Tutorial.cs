@@ -21,7 +21,7 @@ public class Tutorial : MonoBehaviour
     {
         state = State.CLICK;
         texto = panel.GetComponentInChildren<Text>();
-        texto.text = "Haz click sobre la camiseta amarilla.";
+        texto.text = "Pulse sobre la camiseta amarilla y mantenga pulsado.";
         manoAnimator.SetInteger("step", 0);
     }
     private void Update()
@@ -31,13 +31,13 @@ public class Tutorial : MonoBehaviour
             if (state == State.CLICK)
             {
                 state = State.DRAGNDROP;
-                texto.text = "Sin soltar, arrastra la camiseta hasta la maleta y luego suelta.";
+                texto.text = "Sin soltar, arrastre la camiseta hasta la maleta y luego suelte.";
                 manoAnimator.SetInteger("step", 1);
             }
             else if (state == State.LUGGAGE)
             {
                 state = State.OVERINFO;
-                texto.text = "Si pones el cursor sobre el objeto, aparecerá su nombre.";
+                texto.text = "Si pone el cursor sobre el objeto, aparecerá su nombre.";
             }
             else if (state == State.DRAWER)
             {
@@ -63,13 +63,13 @@ public class Tutorial : MonoBehaviour
                 if (camisetaAmarilla.activeSelf)
                 {
                     state = State.CLICK;
-                    texto.text = "Haz click sobre la camiseta amarilla.";
+                    texto.text = "Hago click sobre la camiseta amarilla.";
                     manoAnimator.SetInteger("step", 0);
                 }
                 else
                 {
                     state = State.LUGGAGE;
-                    texto.text = "Haz click en la maleta para ver lo que has metido.";
+                    texto.text = "Haga click en la maleta para ver lo que ha metido.";
                     manoAnimator.SetInteger("step", 2);
                 }
             }
@@ -78,7 +78,7 @@ public class Tutorial : MonoBehaviour
                 if (camisetaAmarilla.activeSelf)
                 {
                     state = State.BACKTOROOM;
-                    texto.text = "Haz click aquí para cerrar la maleta y volver atrás.";
+                    texto.text = "Haga click aquí para cerrar la maleta y volver atrás.";
                     manoAnimator.SetInteger("step", 4);
                 }
             }
@@ -89,14 +89,14 @@ public class Tutorial : MonoBehaviour
             if (panelInfoObject.activeSelf)
             {
                 state = State.PULLOVER;
-                texto.text = "Puedes arrastrar el objeto fuera de la maleta para sacarlo.";
+                texto.text = "Puede arrastrar el objeto fuera de la maleta para sacarlo.";
                 manoAnimator.SetInteger("step", 3);
             }
         }
         else if (state == State.END && camara.gameObject.activeSelf)
         {
             state = State.NULL;
-            texto.text = "Haz click aquí cuando creas que has terminado.";
+            texto.text = "Haga click aquí cuando crea que ha terminado.";
             panel.SetActive(true);
         }
     }
@@ -106,14 +106,14 @@ public class Tutorial : MonoBehaviour
         if (state == State.BACKTOROOM)
         {
             state = State.DRAWER;
-            texto.text = "Puedes ver el contenido de los cajones haciendo click en ellos.";
+            texto.text = "Puede ver el contenido de los cajones haciendo click en ellos.";
             manoAnimator.SetInteger("step", 5);
 
         }
         else if (state == State.DRAWER)
         {
             state = State.BATHROOM;
-            texto.text = "Puedes hacer click aquí para ir al baño.";
+            texto.text = "Puede hacer click aquí para ir al baño.";
             manoAnimator.SetInteger("step", 6);
         }
     }
@@ -122,7 +122,7 @@ public class Tutorial : MonoBehaviour
         if (state == State.BATHROOM)
         {
             state = State.BACKTHROOM;
-            texto.text = "Revisa los cajones y haz click aquí para volver a la habitación";
+            texto.text = "Revise los cajones y haga click aquí para volver a la habitación";
             manoAnimator.SetInteger("step", 7);
 
         }
