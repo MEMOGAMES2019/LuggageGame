@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
 
     enum State { BATHROOM, ROOM, DRAWER, LUGGAGE, FIRSTAIDKIT, END };
 
+    public int level;
     public Camera roomCam;
     public Camera bathroomCam;
     public Camera drawerCam;
@@ -28,7 +29,6 @@ public class LevelManager : MonoBehaviour
     Vector3 initialLuggageScale;
     GameObject currentDrawer = null;
     State state;
-
     public List<Sprite> TiposSuelos { get => _tiposSuelos; set => _tiposSuelos = value; }
     public GameObject Suelo { get => _suelo; set => _suelo = value; }
 
@@ -180,7 +180,8 @@ public class LevelManager : MonoBehaviour
         state = State.END;
         StringBuilder cad = new StringBuilder();
 
-        cad.AppendLine(luggage.Check());
+        cad.AppendLine(luggage.Check(level));
+       
         string s = luggage.GetObjetosErroneos();
         if (s.Length > 0)
             cad.Append(s);

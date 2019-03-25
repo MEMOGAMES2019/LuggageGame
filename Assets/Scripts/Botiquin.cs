@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 /// <summary>
 /// Script para las funcionalidades del botiquín.
@@ -42,6 +43,7 @@ public class Botiquin : MonoBehaviour
     /// </summary>
     private void OnMouseEnter()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) return;
         SpRenderer.enabled = true;
     }
 
@@ -58,6 +60,7 @@ public class Botiquin : MonoBehaviour
     /// </summary>
     private void OnMouseOver()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) return;
         if (Input.GetMouseButtonUp(0))
         {
             LevelManager.GoToFirstAidKit();

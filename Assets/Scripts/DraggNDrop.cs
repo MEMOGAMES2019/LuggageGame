@@ -1,6 +1,7 @@
 ﻿using RAGE.Analytics;
 using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static Assets.Scripts.Constantes;
 
@@ -57,7 +58,7 @@ public class DraggNDrop : MonoBehaviour
     /// Posición actual del movimiento.
     /// </summary>
     private Vector3 Offset { get; set; }
-
+    public Genero GENERO;
     #endregion
 
     #region Eventos
@@ -66,7 +67,7 @@ public class DraggNDrop : MonoBehaviour
     {
         if (Clima != Clima.AMBOS && Clima != GM.Gm.Clima) gameObject.SetActive(false);
         else if (Genero != Genero.NEUTRAL && Genero != GM.Gm.Genero) gameObject.SetActive(false);
-
+        GENERO = GM.Gm.Genero;
         ItsInTarget = false;
         Maleta = ObjetoMaleta.transform.parent.gameObject.GetComponent<Luggage>();
     }
@@ -76,6 +77,8 @@ public class DraggNDrop : MonoBehaviour
     /// </summary>
     private void OnMouseDown()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+
         Tracker.T.setVar("Click en objeto", 1);
         StartPoint = transform.position;
         Offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, OFFSET_Z));
@@ -86,6 +89,8 @@ public class DraggNDrop : MonoBehaviour
     /// </summary>
     private void OnMouseDrag()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+
         Tracker.T.setVar("Objeto pulsado", 1);
         Vector3 newPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, OFFSET_Z);
         transform.position = Camera.main.ScreenToWorldPoint(newPosition) + Offset;
@@ -97,6 +102,8 @@ public class DraggNDrop : MonoBehaviour
     /// </summary>
     private void OnMouseUp()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) return;
+
         Tracker.T.setVar("Deja de clickar en objeto", 1);
         transform.position = StartPoint;
         if (ItsInTarget)

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 
 [RequireComponent(typeof(PolygonCollider2D))]
 public class Drawer : MonoBehaviour
@@ -17,6 +18,7 @@ public class Drawer : MonoBehaviour
     /// </summary>
     private void OnMouseEnter()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) return;
         spRenderer.enabled = true;
     }
 
@@ -30,6 +32,7 @@ public class Drawer : MonoBehaviour
 
     private void OnMouseOver()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) return;
         if (Input.GetMouseButtonUp(0))
         {
             lvlMngr.GoToDrawer(drawer);

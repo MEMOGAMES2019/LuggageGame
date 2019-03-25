@@ -17,19 +17,27 @@ public class LevelSelector : MonoBehaviour
     [SerializeField]
     private GameObject _climaButtons;
     [SerializeField]
-    private GameObject _generoButtons;
+    private GameObject _decoration;
     [SerializeField]
-    private GameObject _nivelButtons;
+    private GameObject _levelButtons;
     [SerializeField]
     private GameObject _panelList;
     [SerializeField]
     private GameObject _tutorialButton;
-    [SerializeField]
-    private Text _pregunta;
 
     #endregion
 
     #region Atributos
+
+    /// <summary>
+    /// Objeto que contiene los elementos decorativos del menú. Imagen del hombre, panel, bocadillo...
+    /// </summary>
+    public GameObject decoration { get => _decoration; set => _decoration = value; }
+
+    /// <summary>
+    /// Botones para seleccionar la dificultad.
+    /// </summary>
+    public GameObject levelButtons { get => _levelButtons; set => _levelButtons = value; }
 
     /// <summary>
     /// Botones para elegir clima.
@@ -37,29 +45,9 @@ public class LevelSelector : MonoBehaviour
     public GameObject ClimaButtons { get => _climaButtons; set => _climaButtons = value; }
 
     /// <summary>
-    /// Botones para elegir género.
-    /// </summary>
-    public GameObject GeneroButtons { get => _generoButtons; set => _generoButtons = value; }
-
-    /// <summary>
-    /// Botones para elegir nivel de dificultad.
-    /// </summary>
-    public GameObject NivelButtons { get => _nivelButtons; set => _nivelButtons = value; }
-
-    /// <summary>
     /// Panel donde se encuentra la lista de objetos a recoger.
     /// </summary>
     public GameObject PanelList { get => _panelList; set => _panelList = value; }
-
-    /// <summary>
-    /// Pregunta que se le hace al jugador.
-    /// </summary>
-    public Text PreguntaText { get => _pregunta; set => _pregunta = value; }
-
-    /// <summary>
-    /// Botones para dar comienzo al tutorial.
-    /// </summary>
-    public GameObject TutorialButton { get => _tutorialButton; set => _tutorialButton = value; }
 
     /// <summary>
     /// Nombre completo del nivel.
@@ -76,19 +64,27 @@ public class LevelSelector : MonoBehaviour
     /// </summary>
     public int Level { get; set; }
 
+    private int levelSelected;
+
     #endregion
 
     #region Eventos
 
     private void Start()
     {
-        GeneroButtons.SetActive(false);
-        NivelButtons.SetActive(false);
+        levelSelected = -1;
         PanelList.SetActive(false);
-        ClimaButtons.SetActive(true);
-        TutorialButton.SetActive(true);
+        ClimaButtons.SetActive(false);
+        levelButtons.SetActive(true);
         TextList = PanelList.GetComponentInChildren<Text>();
-        PreguntaText.text = "Imagínese que está preparando un viaje y que el destino elegido es…";
+
+        GM.Gm.Genero = (Genero)PlayerPrefs.GetInt("genre", -1);
+        if (!PlayerPrefs.HasKey("firstime"))
+        {
+            PlayerPrefs.SetInt("firstime", 1);
+            SelectWeather(0);
+        }
+
     }
 
     #endregion
@@ -96,27 +92,14 @@ public class LevelSelector : MonoBehaviour
     #region Métodos públicos
 
     /// <summary>
-    /// Establece el género en el que se cargarán los datos.
-    /// </summary>
-    /// <param name="g">Valor númerico del género: 0 -> NEUTRAL, 1 -> HOMBRE, 2 -> MUJER</param>
-    public void SetGenre(int g)
-    {
-        GM.Gm.Genero = (Genero)g;
-        GeneroButtons.SetActive(false);
-        NivelButtons.SetActive(true);
-        PreguntaText.text = "Ahora parece que la cosa va sobre la dificultad del juego... ¿Cuál prefieres?";
-    }
-
-    /// <summary>
     /// Establece el clima en el que se cargarán los datos.
     /// </summary>
     /// <param name="w">Valor númerico del clima: 0 -> AMBOS, 1 -> CÁLIDO, 2 -> FRÍO</param>
-    public void SetWeather(int w)
+    public void SetWeather(int w, int level)
     {
         GM.Gm.Clima = (Clima)w;
         ClimaButtons.SetActive(false);
-        GeneroButtons.SetActive(true);
-        PreguntaText.text = "Recuérdame... ¿Eres un hombre o una mujer?";
+        SetLevel(level);
     }
 
     /// <summary>
@@ -125,13 +108,14 @@ public class LevelSelector : MonoBehaviour
     /// <param name="l">Nivel de dificultad del juego: 0 -> Tutorial</param>
     public void SetLevel(int l)
     {
+        _decoration.SetActive(false);
+
         Level = l;
         ClimaButtons.SetActive(false);
-        NivelButtons.SetActive(false);
-        GeneroButtons.SetActive(false);
-        TutorialButton.SetActive(false);
+       
+        
         PanelList.SetActive(true);
-        PreguntaText.text = string.Empty;
+        
 
         //reiniciar la variable
         LevelNameGlobal = string.Empty;
@@ -180,8 +164,8 @@ public class LevelSelector : MonoBehaviour
             };
             StringBuilder cad = new StringBuilder();
             cad.AppendLine("Lea atentamente e intente memorizar los siguientes objetos que debe introducir en la maleta...");
-            cad.AppendLine("Cuando se sienta preparado haz click en el botón play");
-            cad.AppendLine();
+            cad.AppendLine("Cuando se sienta preparado haga click en el botón play");
+            cad.AppendLine(" ");
             cad.AppendLine("- Camiseta amarilla");
             cad.AppendLine("- Deportivas");
             cad.AppendLine("- Cepillo de dientes");
@@ -205,6 +189,30 @@ public class LevelSelector : MonoBehaviour
     {
         SceneManager.LoadScene("Créditos");
     }
+
+    public void SelectWeather(int level)
+    {
+
+        if (level != 0)
+        {
+            levelButtons.SetActive(false);
+            ClimaButtons.SetActive(true);
+        }
+        else
+        {
+            SetLevel(level);
+            levelButtons.SetActive(false);
+            ClimaButtons.SetActive(false);
+            
+        }
+        levelSelected = level;
+       
+    }
+    public void BackToLevels()
+    {
+        levelButtons.SetActive(true);
+        ClimaButtons.SetActive(false);
+    }
     #endregion
 
     #region Métodos privados
@@ -216,7 +224,7 @@ public class LevelSelector : MonoBehaviour
     private void LoadList(string name)
     {
 
-        TextList.text = string.Concat("Lea atentamente e intente memorizar los siguientes objetos que debe introducir en la maleta...", Environment.NewLine);
+        TextList.text = string.Concat("Lea atentamente e intente memorizar los siguientes objetos que debe introducir en la maleta...\n", Environment.NewLine);
         GM.Gm.List = new List<string>();
 
         TextAsset list = (TextAsset)Resources.Load(string.Concat("Lists/", name), typeof(TextAsset));

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(BoxCollider2D))]
@@ -26,6 +27,7 @@ public class Item : MonoBehaviour
     }
     private void OnMouseEnter()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) return;
         panelInfo.SetActive(true);
         nameInfo.text = name;
 
@@ -36,6 +38,7 @@ public class Item : MonoBehaviour
     }
     private void OnMouseOver()
     {
+        if (EventSystem.current.IsPointerOverGameObject()) return;
         if (Input.mousePosition.x == 0 || Input.mousePosition.y == 0 || Input.mousePosition.x == Screen.width - 1 || Input.mousePosition.y == Screen.height - 1)
         {
             hasExit = false;

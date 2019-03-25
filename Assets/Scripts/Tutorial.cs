@@ -41,7 +41,7 @@ public class Tutorial : MonoBehaviour
             }
             else if (state == State.DRAWER)
             {
-                texto.text = "No todos los cajones tendrán algo dentro.";
+                texto.text = "No todos los cajones tendrán algo dentro. Vuelva a la habitación y revise el resto.";
             }
             else if (state == State.BACKTHROOM)
             {
@@ -63,7 +63,7 @@ public class Tutorial : MonoBehaviour
                 if (camisetaAmarilla.activeSelf)
                 {
                     state = State.CLICK;
-                    texto.text = "Hago click sobre la camiseta amarilla.";
+                    texto.text = "Pulse sobre la camiseta amarilla y mantenga pulsado.";
                     manoAnimator.SetInteger("step", 0);
                 }
                 else
@@ -78,7 +78,7 @@ public class Tutorial : MonoBehaviour
                 if (camisetaAmarilla.activeSelf)
                 {
                     state = State.BACKTOROOM;
-                    texto.text = "Haga click aquí para cerrar la maleta y volver atrás.";
+                    texto.text = "Haga click sobre el icono de abajo para cerrar la maleta y volver atrás.";
                     manoAnimator.SetInteger("step", 4);
                 }
             }
@@ -96,7 +96,7 @@ public class Tutorial : MonoBehaviour
         else if (state == State.END && camara.gameObject.activeSelf)
         {
             state = State.NULL;
-            texto.text = "Haga click aquí cuando crea que ha terminado.";
+            texto.text = "Revise su equipaje y haga click sobre el icono del avión para terminar y marcharse de viaje.";
             panel.SetActive(true);
         }
     }
@@ -113,7 +113,7 @@ public class Tutorial : MonoBehaviour
         else if (state == State.DRAWER)
         {
             state = State.BATHROOM;
-            texto.text = "Puede hacer click aquí para ir al baño.";
+            texto.text = "Puede hacer click en el icono de la derecha para ir al baño.";
             manoAnimator.SetInteger("step", 6);
         }
     }
@@ -122,7 +122,7 @@ public class Tutorial : MonoBehaviour
         if (state == State.BATHROOM)
         {
             state = State.BACKTHROOM;
-            texto.text = "Revise los cajones y haga click aquí para volver a la habitación";
+            texto.text = "Revise los cajones y haga click en el icono señalado para volver a la habitación";
             manoAnimator.SetInteger("step", 7);
 
         }
