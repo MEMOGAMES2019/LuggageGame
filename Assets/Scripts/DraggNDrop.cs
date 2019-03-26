@@ -77,7 +77,7 @@ public class DraggNDrop : MonoBehaviour
     /// </summary>
     private void OnMouseDown()
     {
-        if (EventSystem.current.IsPointerOverGameObject()) return;
+        //if (EventSystem.current.IsPointerOverGameObject()) return;
 
         Tracker.T.setVar("Click en objeto", 1);
         StartPoint = transform.position;
@@ -89,7 +89,7 @@ public class DraggNDrop : MonoBehaviour
     /// </summary>
     private void OnMouseDrag()
     {
-        if (EventSystem.current.IsPointerOverGameObject()) return;
+        //if (EventSystem.current.IsPointerOverGameObject()) return;
 
         Tracker.T.setVar("Objeto pulsado", 1);
         Vector3 newPosition = new Vector3(Input.mousePosition.x, Input.mousePosition.y, OFFSET_Z);
@@ -102,7 +102,7 @@ public class DraggNDrop : MonoBehaviour
     /// </summary>
     private void OnMouseUp()
     {
-        if (EventSystem.current.IsPointerOverGameObject()) return;
+       // if (EventSystem.current.IsPointerOverGameObject()) return;
 
         Tracker.T.setVar("Deja de clickar en objeto", 1);
         transform.position = StartPoint;

@@ -14,7 +14,7 @@ public class Tutorial : MonoBehaviour
 
     Text texto;
 
-    enum State { CLICK, DRAGNDROP, LUGGAGE, OVERINFO, PULLOVER, BACKTOROOM, DRAWER, BATHROOM, BACKTHROOM, END, NULL }
+    enum State { CLICK, DRAGNDROP, LUGGAGE, OVERINFO, PULLOVER, BACKTOROOM, DRAWER, BATHROOM, BACKTHROOM, END, NULL, CAMISETAAMARILLA }
     State state;
     // Use this for initialization
     void Start()
@@ -42,6 +42,7 @@ public class Tutorial : MonoBehaviour
             else if (state == State.DRAWER)
             {
                 texto.text = "No todos los cajones tendrán algo dentro. Vuelva a la habitación y revise el resto.";
+                
             }
             else if (state == State.BACKTHROOM)
             {
@@ -82,6 +83,15 @@ public class Tutorial : MonoBehaviour
                     manoAnimator.SetInteger("step", 4);
                 }
             }
+            if(state == State.CAMISETAAMARILLA)
+            {
+                if (!camisetaAmarilla.activeSelf)
+                {
+                    state = State.DRAWER;
+                    texto.text = "Puede ver el contenido de los cajones haciendo click en ellos.";
+                    manoAnimator.SetInteger("step", 5);
+                }
+            }
         }
 
         if (state == State.OVERINFO)
@@ -105,9 +115,10 @@ public class Tutorial : MonoBehaviour
     {
         if (state == State.BACKTOROOM)
         {
-            state = State.DRAWER;
-            texto.text = "Puede ver el contenido de los cajones haciendo click en ellos.";
-            manoAnimator.SetInteger("step", 5);
+            state = State.CAMISETAAMARILLA;
+            texto.text = "Vuelva a meter la camiseta amarilla en la maleta.";
+            manoAnimator.SetInteger("step", 2);
+           
 
         }
         else if (state == State.DRAWER)

@@ -22,8 +22,8 @@ public class LevelSelector : MonoBehaviour
     private GameObject _levelButtons;
     [SerializeField]
     private GameObject _panelList;
-    [SerializeField]
-    private GameObject _tutorialButton;
+   
+    public GameObject creditsButton;
 
     #endregion
 
@@ -85,6 +85,8 @@ public class LevelSelector : MonoBehaviour
             SelectWeather(0);
         }
 
+        if (PlayerPrefs.GetInt("level3C") + PlayerPrefs.GetInt("level3W") >= 1) creditsButton.SetActive(true);
+        else creditsButton.SetActive(false);
     }
 
     #endregion
