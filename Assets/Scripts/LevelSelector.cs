@@ -166,7 +166,7 @@ public class LevelSelector : MonoBehaviour
             };
             StringBuilder cad = new StringBuilder();
             cad.AppendLine("Lea atentamente e intente memorizar los siguientes objetos que debe introducir en la maleta...");
-            cad.AppendLine("Cuando se sienta preparado haga click en el botón play");
+            cad.AppendLine("Cuando se sienta preparado haga click en el botón amarillo de abajo");
             cad.AppendLine(" ");
             cad.AppendLine("- Camiseta amarilla");
             cad.AppendLine("- Deportivas");

@@ -697,8 +697,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 55.8}
-  m_SizeDelta: {x: 623.5, y: 307.4}
+  m_AnchoredPosition: {x: 0, y: -17.6}
+  m_SizeDelta: {x: 921.2, y: 454.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1952330990
 MonoBehaviour:
@@ -733,9 +733,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Tutor: \n\nBALTASAR FERN\xC1NDEZ MANJ\xD3N\n\nProfesionales implicados:\n\nMARIA
-    DEL CARMEN D\xCDAZ MARDOMINGO\nSARA GARC\xCDA HERRANZ\n\nDesarrolladores:\n\nDAVID
-    P\xC9REZ COGOLLUDO\nMIGUEL JIM\xC9NEZ RODR\xCDGUEZ\nMANUEL HIDALGO LORENTE"
+  m_Text: "Director: \n\nBALTASAR FERN\xC1NDEZ MANJ\xD3N\n\nAsesoras t\xE9cnicas:\n\nMARIA
+    DEL CARMEN D\xCDAZ MARDOMINGO\nSARA GARC\xCDA HERRANZ\n\nJefe de desarrollo:\n\nDAVID
+    P\xC9REZ COGOLLUDO\n\nDesarrolladores:\n\nDAVID P\xC9REZ COGOLLUDO\nMIGUEL JIM\xC9NEZ
+    RODR\xCDGUEZ\nMANUEL HIDALGO LORENTE\n\nGrafistas:\n\nPALOMA ASENSIO SOLANA\nROSA
+    M PEROMINGO GUZM\xC1N\nANA VALLECILLOS RUIZ\n"
 --- !u!222 &1952330991
 CanvasRenderer:
   m_ObjectHideFlags: 0

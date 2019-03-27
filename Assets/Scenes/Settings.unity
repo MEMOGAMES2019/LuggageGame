@@ -224,7 +224,7 @@ MonoBehaviour:
   _decoration: {fileID: 223940053}
   _levelButtons: {fileID: 223940053}
   _panelList: {fileID: 414129231}
-  _tutorialButton: {fileID: 223940053}
+  creditsButton: {fileID: 414129231}
 --- !u!224 &223940055
 RectTransform:
   m_ObjectHideFlags: 0

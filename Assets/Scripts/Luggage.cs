@@ -39,6 +39,11 @@ public class Luggage : MonoBehaviour
     /// </summary>
     private List<LuggageTarget> Targets { get => _targets; set => _targets = value; }
 
+    /// <summary>
+    /// Variable que almacena las estrellas que consigue el usuario.
+    /// </summary>
+    private int stars = 0;
+    public int Stars { get => stars; set => stars = value; }
     #endregion
 
     #region Eventos
@@ -123,25 +128,32 @@ public class Luggage : MonoBehaviour
         });
         if (objetosNoGuardados.Count == 0 && ObjetosErroneosGuardados.Count == 0)
         {
-           
+            stars = 3;
             PlayerPrefs.SetInt("level" + level.ToString()+ clima, 3);
             return ("Felicidades\n ¡Ha superado el nivel con éxito!");
         }
 
-        float objTotales = ObjetosList.Count;
-        float objMetidos = objTotales - objetosNoGuardados.Count;
-        objMetidos -= ObjetosErroneosGuardados.Count / 2;
-       
-        int stars = 0;
-        if (objMetidos / objTotales >= 0.8f) stars = 3;
-        else if (objMetidos / objTotales >= 0.4f) stars = 2;
-        else if (objMetidos >= 1) stars = 1;
-        else stars = 0;
-       
+        int erroneos = ObjetosErroneosGuardados.Count;
+        if (erroneos >= 3) stars = 1;
+        else if (erroneos >= 1) stars = 2;
+        else
+        {
+            float objTotales = ObjetosList.Count;
+            float objMetidos = objTotales - objetosNoGuardados.Count;
+            objMetidos -= ObjetosErroneosGuardados.Count / 2;
 
+
+            if (objMetidos / objTotales >= 0.8f) stars = 3;
+            else if (objMetidos / objTotales >= 0.4f) stars = 2;
+            else if (objMetidos >= 1) stars = 1;
+            else stars = 0;
+        }
+
+        
         if(PlayerPrefs.GetInt("level" + level.ToString() + clima)<= stars)
             PlayerPrefs.SetInt("level" + level.ToString()+clima, stars);
 
+        if (objetosNoGuardados.Count == 0) return string.Empty;
         StringBuilder cad = new StringBuilder();
         cad.AppendLine("Ups... Se ha olvidado de estos objetos:\n");
 

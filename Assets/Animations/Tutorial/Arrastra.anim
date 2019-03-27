@@ -4,7 +4,8 @@
 AnimationClip:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_Name: Arrastra
   serializedVersion: 6
   m_Legacy: 0
@@ -71,16 +72,16 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 0.8333333
-        value: {x: -37.49, y: -15.26, z: 11.46428}
-        inSlope: {x: -7.479992, y: -11.960003, z: 0}
-        outSlope: {x: -7.479992, y: -11.960003, z: 0}
+        value: {x: -47.4, y: -15.26, z: 11.46428}
+        inSlope: {x: -22.399988, y: -11.960003, z: 0}
+        outSlope: {x: -22.399988, y: -11.960003, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 1
-        value: {x: -39.36, y: -18.25, z: 11.46428}
+        value: {x: -53, y: -18.25, z: 11.46428}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -89,16 +90,16 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 1.1666666
-        value: {x: -37.49, y: -15.26, z: 11.46428}
-        inSlope: {x: 5.6400137, y: 6.720004, z: 0}
-        outSlope: {x: 5.6400137, y: 6.720004, z: 0}
+        value: {x: -51.2, y: -15.26, z: 11.46428}
+        inSlope: {x: 0, y: 6.720004, z: 0}
+        outSlope: {x: 0, y: 6.720004, z: 0}
         tangentMode: 0
         weightedMode: 0
         inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 1.3333334
-        value: {x: -37.02, y: -14.7, z: 11.46428}
+        value: {x: -51.2, y: -14.7, z: 11.46428}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -107,7 +108,7 @@ AnimationClip:
         outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
       - serializedVersion: 3
         time: 1.5
-        value: {x: -37.49, y: -15.26, z: 11.46428}
+        value: {x: -51.2, y: -15.26, z: 11.46428}
         inSlope: {x: 0, y: 0, z: 0}
         outSlope: {x: 0, y: 0, z: 0}
         tangentMode: 0
@@ -178,16 +179,16 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 0.8333333
-        value: -37.49
-        inSlope: -7.479992
-        outSlope: -7.479992
+        value: -47.4
+        inSlope: -22.399988
+        outSlope: -22.399988
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: -39.36
+        value: -53
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -196,16 +197,16 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1.1666666
-        value: -37.49
-        inSlope: 5.6400137
-        outSlope: 5.6400137
+        value: -51.2
+        inSlope: 0
+        outSlope: 0
         tangentMode: 136
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1.3333334
-        value: -37.02
+        value: -51.2
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -214,7 +215,7 @@ AnimationClip:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1.5
-        value: -37.49
+        value: -51.2
         inSlope: 0
         outSlope: 0
         tangentMode: 136
@@ -527,5 +528,4 @@ AnimationClip:
     script: {fileID: 0}
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
-  m_GenerateMotionCurves: 0
   m_Events: []
