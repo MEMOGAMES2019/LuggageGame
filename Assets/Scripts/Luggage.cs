@@ -134,23 +134,23 @@ public class Luggage : MonoBehaviour
         }
 
         int erroneos = ObjetosErroneosGuardados.Count;
-        if (erroneos >= 3) stars = 1;
-        else if (erroneos >= 1) stars = 2;
-        else
-        {
-            float objTotales = ObjetosList.Count;
-            float objMetidos = objTotales - objetosNoGuardados.Count;
-            objMetidos -= ObjetosErroneosGuardados.Count / 2;
-
-
-            if (objMetidos / objTotales >= 0.8f) stars = 3;
-            else if (objMetidos / objTotales >= 0.4f) stars = 2;
-            else if (objMetidos >= 1) stars = 1;
-            else stars = 0;
-        }
-
         
-        if(PlayerPrefs.GetInt("level" + level.ToString() + clima)<= stars)
+        float objTotales = ObjetosList.Count;
+        float objMetidos = objTotales - objetosNoGuardados.Count;
+        objMetidos -= ObjetosErroneosGuardados.Count / 2;
+
+
+        if (objMetidos / objTotales >= 0.8f) stars = 3;
+        else if (objMetidos / objTotales >= 0.4f) stars = 2;
+        else if (objMetidos >= 1) stars = 1;
+        else stars = 0;
+
+        if (erroneos >= 3 && stars != 0) stars = 1;
+        else if (erroneos >= 1 && stars >= 2) stars = 2;
+        
+
+
+        if (PlayerPrefs.GetInt("level" + level.ToString() + clima)<= stars)
             PlayerPrefs.SetInt("level" + level.ToString()+clima, stars);
 
         if (objetosNoGuardados.Count == 0) return string.Empty;
