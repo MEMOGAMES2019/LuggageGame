@@ -12,6 +12,8 @@ public class GM : MonoBehaviour
     private int _clima;
     [SerializeField]
     private int _genero;
+    [SerializeField]
+    private int _level;
 
     #endregion
 
@@ -25,8 +27,8 @@ public class GM : MonoBehaviour
     /// <summary>
     /// Manejado general del juego.
     /// </summary>
-    public static GM Gm { get; set; }
-
+    public static GM Gm;
+   
     public List<string> ObstaculosList { get; set; }
 
     /// <summary>
@@ -94,14 +96,19 @@ public class GM : MonoBehaviour
         ObstaculosList = new List<string>();
     }
 
-    private void Start()
-    {
-        Screen.orientation = ScreenOrientation.LandscapeLeft;
-    }
-
     #endregion
 
     #region Métodos públicos
+    /// <summary>
+    /// Método que setea en género del jugador dado un entero. 0 será neutral, 1 será hombre y 2 será mujer.
+    /// </summary>
+    /// <param name="g"></param>
+    public void SetGenre(int g)
+    {
+        PlayerPrefs.SetInt("genre", g);
+        Genero = (Genero)g;
+        LoadScene("Menu");
+    }
 
     public void LoadScene(string scene)
     {
@@ -116,6 +123,17 @@ public class GM : MonoBehaviour
         Application.Quit();
     }
 
+    public int Level
+    {
+        get { return _level; }
+        set { _level = value; }
+    }
+
+    public void RestartGame()
+    {
+        PlayerPrefs.DeleteAll();
+        LoadScene("Intro");
+    }
     #endregion
 
 }

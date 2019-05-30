@@ -14,14 +14,14 @@ public class Tutorial : MonoBehaviour
 
     Text texto;
 
-    enum State { CLICK, DRAGNDROP, LUGGAGE, OVERINFO, PULLOVER, BACKTOROOM, DRAWER, BATHROOM, BACKTHROOM, END, NULL }
+    enum State { CLICK, DRAGNDROP, LUGGAGE, OVERINFO, PULLOVER, BACKTOROOM, DRAWER, BATHROOM, BACKTHROOM, END, NULL, CAMISETAAMARILLA }
     State state;
     // Use this for initialization
     void Start()
     {
         state = State.CLICK;
         texto = panel.GetComponentInChildren<Text>();
-        texto.text = "Haz click sobre la camiseta amarilla.";
+        texto.text = "Pulse sobre la camiseta amarilla y mantenga pulsado.";
         manoAnimator.SetInteger("step", 0);
     }
     private void Update()
@@ -31,17 +31,18 @@ public class Tutorial : MonoBehaviour
             if (state == State.CLICK)
             {
                 state = State.DRAGNDROP;
-                texto.text = "Sin soltar, arrastra la camiseta hasta la maleta y luego suelta.";
+                texto.text = "Sin soltar, arrastre la camiseta hasta la maleta y luego suelte.";
                 manoAnimator.SetInteger("step", 1);
             }
             else if (state == State.LUGGAGE)
             {
                 state = State.OVERINFO;
-                texto.text = "Si pones el cursor sobre el objeto, aparecerá su nombre.";
+                texto.text = "Si pone el cursor sobre el objeto, aparecerá su nombre.";
             }
             else if (state == State.DRAWER)
             {
-                texto.text = "No todos los cajones tendrán algo dentro.";
+                texto.text = "No todos los cajones tendrán algo dentro. Vuelva a la habitación y revise el resto.";
+                
             }
             else if (state == State.BACKTHROOM)
             {
@@ -63,13 +64,13 @@ public class Tutorial : MonoBehaviour
                 if (camisetaAmarilla.activeSelf)
                 {
                     state = State.CLICK;
-                    texto.text = "Haz click sobre la camiseta amarilla.";
+                    texto.text = "Pulse sobre la camiseta amarilla y mantenga pulsado.";
                     manoAnimator.SetInteger("step", 0);
                 }
                 else
                 {
                     state = State.LUGGAGE;
-                    texto.text = "Haz click en la maleta para ver lo que has metido.";
+                    texto.text = "Haga click en la maleta para ver lo que ha metido.";
                     manoAnimator.SetInteger("step", 2);
                 }
             }
@@ -78,8 +79,17 @@ public class Tutorial : MonoBehaviour
                 if (camisetaAmarilla.activeSelf)
                 {
                     state = State.BACKTOROOM;
-                    texto.text = "Haz click aquí para cerrar la maleta y volver atrás.";
+                    texto.text = "Haga click sobre el icono de abajo para cerrar la maleta y volver atrás.";
                     manoAnimator.SetInteger("step", 4);
+                }
+            }
+            if(state == State.CAMISETAAMARILLA)
+            {
+                if (!camisetaAmarilla.activeSelf)
+                {
+                    state = State.DRAWER;
+                    texto.text = "Puede ver el contenido de los cajones haciendo click en ellos.";
+                    manoAnimator.SetInteger("step", 5);
                 }
             }
         }
@@ -89,14 +99,14 @@ public class Tutorial : MonoBehaviour
             if (panelInfoObject.activeSelf)
             {
                 state = State.PULLOVER;
-                texto.text = "Puedes arrastrar el objeto fuera de la maleta para sacarlo.";
+                texto.text = "Puede arrastrar el objeto fuera de la maleta para sacarlo.";
                 manoAnimator.SetInteger("step", 3);
             }
         }
         else if (state == State.END && camara.gameObject.activeSelf)
         {
             state = State.NULL;
-            texto.text = "Haz click aquí cuando creas que has terminado.";
+            texto.text = "Revise su equipaje y haga click sobre el icono del avión para terminar y marcharse de viaje.";
             panel.SetActive(true);
         }
     }
@@ -105,15 +115,16 @@ public class Tutorial : MonoBehaviour
     {
         if (state == State.BACKTOROOM)
         {
-            state = State.DRAWER;
-            texto.text = "Puedes ver el contenido de los cajones haciendo click en ellos.";
-            manoAnimator.SetInteger("step", 5);
+            state = State.CAMISETAAMARILLA;
+            texto.text = "Vuelva a meter la camiseta amarilla en la maleta.";
+            manoAnimator.SetInteger("step", 2);
+           
 
         }
         else if (state == State.DRAWER)
         {
             state = State.BATHROOM;
-            texto.text = "Puedes hacer click aquí para ir al baño.";
+            texto.text = "Puede hacer click en el icono de la derecha para ir al baño.";
             manoAnimator.SetInteger("step", 6);
         }
     }
@@ -122,7 +133,7 @@ public class Tutorial : MonoBehaviour
         if (state == State.BATHROOM)
         {
             state = State.BACKTHROOM;
-            texto.text = "Revisa los cajones y haz click aquí para volver a la habitación";
+            texto.text = "Revise los cajones y haga click en el icono señalado para volver a la habitación";
             manoAnimator.SetInteger("step", 7);
 
         }
